@@ -98,7 +98,7 @@ public class HomeController {
         advancedLogic.addHomeCommonLinksToPersonModel(model, allFilterFilters, filter);
 
         if (device.isMobile())
-            return "/mobile/home/m_admin_filters";
+            return "mobile/home/m_admin_filters";
         else
             return "home/admin_filters";
     }
@@ -113,7 +113,7 @@ public class HomeController {
         advancedLogic.addHomeCommonLinksToPersonModel(model, allExpertsFilters, expert);
 
         if (device.isMobile())
-            return "/mobile/home/m_admin_experts";
+            return "mobile/home/m_admin_experts";
         else
             return "home/admin_experts";
     }
@@ -146,7 +146,7 @@ public class HomeController {
         Map<String, List<LeadEntity>> allExpertsFilters = leadService.findAllOfExpertFilters();
         advancedLogic.addHomeCommonLinksToSuperuserModel(model, principalEntity.getId(), allExpertsFilters, expert);
 
-        return "/home/superuser_experts";
+        return "home/superuser_experts";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_JURIST', 'ROLE_ADVERTISER')")
