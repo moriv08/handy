@@ -1,14 +1,13 @@
 package ru.handy.handy.components;
 
-import jdk.jshell.Snippet;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import ru.handy.handy.models.lead_heap.LeadEntity;
-import ru.handy.handy.models.mappers.Labels;
 import ru.handy.handy.models.mappers.Statuses;
 import ru.handy.handy.service.lead_heap.LeadService;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 //@Controller
 @Component
