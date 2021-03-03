@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="booking_obj">
+	<!------------------------------------------------- 1.4	----------------------------------------------------------------->
+
+	<div class="central_container" th:object="${booking}">
+		<div class="table_header">
+			<p>1.4. Бронь</p>
+		</div>
+
+		<table class="info_table">
+			<tr>
+				<td class="td_label">
+					<p> ЖК: </p>
+				</td>
+				<td th:if="${booking}" th:class="*{getLocation} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getLocation}"></span>
+					<input type="text" class="hidden_input" maxlength="75"
+						   name="bookingLocation"
+						   th:placeholder="*{getLocation}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Цена: </p>
+				</td>
+				<td th:if="${booking}" th:class="*{getPrice} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getPrice}"></span>
+					<input type="text" class="hidden_input" maxlength="75"
+						   name="bookingPrice"
+						   th:placeholder="*{getPrice}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Сдача:</p>
+				</td>
+				<td th:if="${booking}" th:class="*{getHanding} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getHanding}"></span>
+					<input type="text" class="hidden_input" maxlength="75"
+						   name="bookingHanding"
+						   th:placeholder="*{getHanding}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Площадь:</p>
+
+				</td>
+				<td th:if="${booking}" th:class="*{getSquare} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getSquare}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="bookingSquare"
+						   th:placeholder="*{getSquare}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Комнат:</p>
+				</td>
+				<td th:if="${booking}" th:class="*{getRooms} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getRooms}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="bookingRooms"
+						   th:placeholder="*{getRooms}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Начало брони:</p>
+				</td>
+				<td th:if="${booking}" th:class="*{getBookingStart} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getBookingStart}"></span>
+					<input class="hidden_input" type="date"
+						   name="bookingStart"
+						   th:placeholder="*{getBookingStart}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Бронь до:</p>
+				</td>
+				<td th:if="${booking}" th:class="*{getBookingEnd} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getBookingEnd}"></span>
+					<input class="hidden_input" type="date"
+						   name="bookingEnd"
+						   th:placeholder="*{getBookingEnd}">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<!---------------------------------------------------------------------------------------------------------->
+</div>
+</body>
+</html>

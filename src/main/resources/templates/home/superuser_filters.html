@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<!--------------------------------HEADER--------------->
+		<div th:insert="fragments/headers/header :: home"></div>
+		<!----------------------------------------------------->
+	</head>
+	<body>
+		<div class="main">
+
+			<!----------------------HOME AND LOGOUT BUTTON---------------->
+			<div th:insert="fragments/common/home_button :: go_home"></div>
+			<!------------------------------------------------------------>
+
+			<!--------------------FILTERS SEARCHER------------------------------>
+			<div th:insert="fragments/home/search_blocks :: label_filters"></div>
+			<!------------------------------------------------------------------>
+
+
+			<table id="threeBlocksTable">
+				<tr>
+					<td class="leftSideTBT">
+
+						<div id="leftHeader" class="blockHeader"><p><b>ВСЕ ФИЛЬТРЫ</b></p></div>
+						<div id="allFiltersDiv" class="keepers">
+
+							<!----------------------ADMIN FILTERS------------------------->
+							<div th:insert="fragments/home/filters :: superuser_filters"></div>
+							<!------------------------------------------------------------>
+
+						</div>
+
+					</td>
+					<td class="centerTBT">
+
+						<div id="board">
+
+							<!--------------------------------TASKS------------------->
+							<div th:insert="fragments/home/board :: admin_tasks"></div>
+							<!-------------------------------------------------------->
+
+							<!--------------------------------TASKS--------------------------->
+							<div th:insert="fragments/home/board :: simple_announcement"></div>
+							<!---------------------------------------------------------------->
+
+						</div>
+
+					</td>
+					<td class="rightSideTBT">
+
+						<div id="rightHeader" class="blockHeader"><p><b>АКТИВНЫЕ ЗАЯВКИ</b></p></div>
+						<div id="applications" class="keepers">
+
+							<!--------------------------------COLORED LEADS---------------->
+							<div th:insert="fragments/home/colored_leads :: advanced"></div>
+							<!------------------------------------------------------------->
+
+						</div>
+
+					</td>
+				</tr>
+			</table>
+
+			<!--------------------------------ALL LEADS HOME TABLE--------------->
+			<div th:insert="fragments/home/leads_table :: leads_table"></div>
+			<!------------------------------------------------------------------->
+
+		</div>
+	</body>
+	<!---------------------footer----------------->
+	<div th:insert="fragments/footers/footer::home"></div>
+	<!-------------------------------------------->
+</html>

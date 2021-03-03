@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_1_7">
+
+
+
+	<!-------------------------------- 1.7	------------------------------->
+		<div class="central_container">
+			<form th:action="@{'/api/update/flat/super_comment/' + ${role} }" method="POST">
+				<div class="table_header"><p> 1.7. Коментарии супервайзера по оценке </p></div>
+				<div class="super_comment_div" >
+
+					<div style="min-height: 200px; width: 65%; float: left">
+						<p> Комментарии супервайзера </p>
+						<div class="super_user_os">
+							<span class="user_message" th:text="${lead.getSuperComment}"></span>
+						</div>
+
+
+					</div>
+
+					<div class="price_holder">
+						<p>Оценка супервайзера</p>
+						<div class="curent_price">
+							<input type="text" class="set_price" maxlength="50" th:value="${lead.getSuperPrice}" readonly>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="send_expert_comment">
+
+					<textarea type="text" rows="15" cols="50" wrap="hard" class="textarea"
+							  name="superComment"
+							  th:text="${lead.getSuperComment}" readonly></textarea>
+
+				</div>
+
+			</form>
+		</div>
+
+
+
+	</div>
+</html>

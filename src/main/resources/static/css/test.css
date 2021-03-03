@@ -1,0 +1,45 @@
+
+.filters_block{
+	width: 100%;
+	min-height: 800px;
+	margin: 30px auto;
+	padding: 0;
+	background-color: darkgray;
+
+	font-size: 40px;
+}
+
+.orange{
+	background-color: #f3c552;
+}
+
+.green{
+	background-color: #739F3D;
+}
+
+.filters_block ul{
+	padding: 0;
+	list-style-type: none;
+}
+
+.filters_block ul li{
+	width: 100%;
+	height: 110px;
+	margin: 10px 0;
+	background-color: white;
+	border: 1px solid lightgray;
+	list-style-type: none;
+
+
+	box-shadow: 0.4em 0.4em 11px rgba(122,122,122,0.3);
+}
+
+
+.test{
+	width: 100%;
+	height: 150px;
+	margin: 7px auto;
+
+	background: #d1dce3;
+	font-size: 25px;
+}

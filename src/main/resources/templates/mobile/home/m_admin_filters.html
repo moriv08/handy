@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<!--------------------------------HEADER--------------->
+		<div th:insert="fragments/headers/header :: mobile_home"></div>
+		<!----------------------------------------------------->
+	</head>
+	<body>
+		<div class="main">
+
+			<!----------------------HOME AND LOGOUT BUTTON---------------->
+			<div th:insert="fragments/common/home_button :: mobile_go_home"></div>
+			<!------------------------------------------------------------>
+
+			<!--------------------EXPERTS SEARCHER------------------------------>
+			<div th:insert="mobile/m_fragments/m_home/m_search_blocks :: label_filters"></div>
+			<!------------------------------------------------------------------>
+
+<!--			<div class="leftSideTBT">-->
+				<!----------------------ADMIN FILTERS------------------------->
+				<div th:insert="mobile/m_fragments/m_home/m_filters :: admin_filters"></div>
+				<!------------------------------------------------------------>
+<!--			</div>-->
+
+			<div class="centerTBT" >
+				<div id="board">
+
+					<!--------------------------------TASKS------------------->
+					<div th:insert="mobile/m_fragments/m_home/m_board :: admin_tasks"></div>
+					<!-------------------------------------------------------->
+
+					<!--------------------------------TASKS-------------------------->
+					<div th:insert="mobile/m_fragments/m_home/m_board :: admin_announcement"></div>
+					<!--------------------------------------------------------------->
+
+				</div>
+			</div>
+
+
+<!--			<div class="rightSideTBT">-->
+
+<!--				<div id="rightHeader" class="blockHeader"><p><b>АКТИВНЫЕ ЗАЯВКИ</b></p></div>-->
+<!--				<div id="applications" class="keepers">-->
+
+<!--					&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;COLORED LEADS&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--					<div th:insert="fragments/home/colored_leads :: advanced"></div>-->
+<!--					&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--				</div>-->
+
+<!--			</div>-->
+
+			<!--------------------------------ALL LEADS HOME TABLE--------------->
+			<div th:insert="mobile/m_fragments/m_home/m_leads_table :: leads_table"></div>
+			<!------------------------------------------------------------------->
+
+		</div>
+	</body>
+	<!---------------------footer----------------->
+	<div th:insert="fragments/footers/footer::home"></div>
+	<!-------------------------------------------->
+</html>

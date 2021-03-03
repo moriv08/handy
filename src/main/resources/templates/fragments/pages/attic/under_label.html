@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!---------------------------------------UNDER LABEL INFO------------------------------------>
+<div th:fragment="brief_lead_info">
+
+	<div class="under_label_info">
+		<table class="lead_and_expert_info">
+			<tr>
+				<td th:text="'|  #' + ${lead.getId} + '  |'"></td>
+				<td th:text="'|  от ' + ${lead.getLeadDate} + ' |'"></td>
+				<td th:text="'|  в работе: ' + ${workingPeriod} + ' дн' + '  |'"></td>
+				<td th:if="${contractPeriod}"
+					th:text="'|  в договоре: ' + ${contractPeriod} + ' дн' + '  |'"></td>
+				<td th:unless="${contractPeriod}"
+					th:text="'|  пока не в договоре  |'"></td>
+				<td th:text="'|  эксперт: ' + ${lead.getExpert.getName} + '  |'"></td>
+				<td th:text="'|  супервайзер: ' + ${lead.getExpert.getSuperuser.getName} + '  |'"></td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------------------->
+<!---------------------------------------UNDER LABEL INFO------------------------------------>
+<div th:fragment="mobile_brief_lead_info">
+
+	<div class="under_label_info">
+
+		<p th:text="'#' + ${lead.getId}"></p>
+		<p th:text="'от ' + ${lead.getLeadDate}"></p>
+		<p th:text="'в работе: ' + ${workingPeriod} + ' дн.'"></p>
+		<p th:if="${contractPeriod}"
+			th:text="'в договоре: ' + ${contractPeriod} + ' дн.'"></p>
+		<p th:unless="${contractPeriod}"
+			th:text="'пока не в договоре'"></p>
+		<p th:text="'эксперт: ' + ${lead.getExpert.getName}"></p>
+		<p th:text="'супервайзер: ' + ${lead.getExpert.getSuperuser.getName}"></p>
+
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------------------->
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+	<body>
+		<div th:fragment="link_labels">
+
+			<div id="booker">
+				<div class="bookmarks">
+					<a href="#">
+						1. ОБЪЕКТ
+					</a>
+				</div>
+				<div class="bookmarks">
+					<a href="#">
+						2. БРОНЬ,
+						<br/>
+						РАБОТА С КЛИЕНТОМ
+					</a>
+				</div>
+<!--				<div class="bookmarks" id="main_bookmark">-->
+					<div class="bookmarks" th:id="${juridical_path} ? main_bookmark">
+					<a href="#">
+						3. ЮРИДИЧЕСКОЕ ЗАКЛЮЧЕНИЕ
+					</a>
+				</div>
+				<div class="bookmarks">
+					<a href="#">
+						4. РЕКЛАМА
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

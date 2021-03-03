@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="unchangeable">
+	<!----------------------------------------------------------------------------------->
+	<!-------------------------------- 2.1	------------------------------->
+	<div class="central_container">
+		<div style="width: 50%; margin-left: 10%;">
+
+			<div class="table_header"><p> 2.1. Результат звонка </p></div>
+			<table class="info_table">
+				<tr>
+					<td class="un_ch_td_label" th:style="*{getCalled} ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Дозвонились: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label" th:style="not *{getCalled} ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Не дозвонились: </p>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+	<!--------------------------------------------------------------------->
+	<!-------------------------------- 2.2	------------------------------->
+	<div class="central_container">
+		<div style="width: 50%; margin-left: 10%;">
+
+			<div class="table_header"><p> 2.2. Оценка озвучена </p></div>
+
+			<table class="info_table">
+				<tr>
+					<td class="un_ch_td_label" th:style="(*{getClientDigitStatus} == 31) ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Согласен: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label" th:style="(*{getClientDigitStatus} == 23) ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Клиент думает: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label" th:style="(*{getClientDigitStatus} == 16) ? 'opacity:1.0' : 'opacity:0.2'">
+						<p>Не согласен: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label" th:style="(*{getClientAnswer} == 32) ? 'opacity:1.0' : 'opacity:0.3'">
+						<p>Другая программа: </p>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+	<!--------------------------------------------------------------------->
+	<!-------------------------------- 2.3	------------------------------->
+	<div class="central_container">
+		<div style="width: 50%; margin-left: 10%;">
+
+			<div class="table_header"><p> 2.3. Статус </p></div>
+			<table class="info_table">
+				<tr>
+					<td class="un_ch_td_label"
+						th:style="(*{getClientDigitStatus} > 1 and
+							 			*{getClientDigitStatus} < 100) ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Актив: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label"
+						th:style="*{getClientDigitStatus} == 0 ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Архив: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label"
+						th:style="*{getClientDigitStatus} == 102 ? 'opacity:1.0' : 'opacity:0.2'">
+						<p>Пассив: </p>
+					</td>
+				</tr>
+				<tr>
+					<td class="un_ch_td_label"
+						th:style="*{getClientDigitStatus} == 103 ? 'opacity:1.0' : 'opacity:0.2'">
+						<p> Отложенный: </p>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+	<!----------------------------------------------------------------------------------->
+</div>
+
+</body>
+</html>

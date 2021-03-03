@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="changeable">
+	<!----------------------------------------------------------------------------------->
+
+	<form action="/api/update/booking/some" method="GET" th:object="${lead}">
+
+		<!-------------------------------- 2.1	------------------------------->
+		<div class="central_container" >
+
+
+			<div class="table_header"><p> 2.1. Результат звонка </p></div>
+			<table class="info_table">
+				<tr>
+					<td th:class="*{getCalled} ? visible_td_label : invisible_td_label">
+						<p> Дозвонились: </p>
+					</td>
+					<td>
+						<input type="radio" class="radio_input"
+							   name="clientCall"
+							   value="true">
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(not *{getCalled}) ? visible_td_label : invisible_td_label">
+						<p> Не дозвонились: </p>
+					</td>
+					<td>
+						<input type="radio" class="radio_input"
+							   name="clientCall"
+							   value="false" >
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<!--------------------------------------------------------------------->
+		<!-------------------------------- 2.2	------------------------------->
+
+		<div class="central_container">
+			<div class="table_header">
+				<p> 2.2. Оценка озвучена клиенту </p>
+			</div>
+
+			<table class="info_table">
+				<tr>
+					<td th:class="(*{getClientDigitAnswer} == ${clientAgree}) ? visible_td_label : invisible_td_label">
+						<p> Согласен: </p>
+					</td>
+					<td>
+						<input type="radio" class="radio_input"
+							   name="clientDigitAnswer"
+							   th:value="${clientAgree}" >
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(*{getClientDigitAnswer} == ${clientThinks}) ? visible_td_label : invisible_td_label">
+						<p> Клиент думает: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitAnswer"
+							   th:value="${clientThinks}" >
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(*{getClientDigitAnswer} == ${clientReject}) ? visible_td_label : invisible_td_label">
+						<p>Не согласен: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitAnswer"
+							   th:value="${clientReject}" >
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(*{getClientDigitAnswer} == ${clientOtherProgram}) ? visible_td_label : invisible_td_label">
+						<p>Другая программа: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitAnswer"
+							   th:value="${clientOtherProgram}" >
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--------------------------------------------------------------------->
+		<!-------------------------------- 2.3	------------------------------->
+
+		<div class="central_container">
+
+			<div class="table_header">
+				<p> 2.3. Статус </p>
+			</div>
+
+			<table class="info_table">
+				<tr>
+					<td th:class="(*{getClientDigitStatus} == ${active}) ? visible_td_label : invisible_td_label">
+						<p> Актив: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitStatus"
+							   th:value="${active}" >
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(*{getClientDigitStatus} == ${postponed}) ? visible_td_label : invisible_td_label">
+						<p> Отложенный: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitStatus"
+							   th:value="${postponed}" >
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(*{getClientDigitStatus} == ${passive}) ? visible_td_label : invisible_td_label">
+						<p>Пассив: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitStatus"
+							   th:value="${passive}" >
+					</td>
+				</tr>
+				<tr>
+					<td th:class="(*{getClientDigitStatus} == ${archive}) ? visible_td_label : invisible_td_label">
+						<p> Архив: </p>
+					</td>
+					<td >
+						<input type="radio" class="radio_input"
+							   name="clientDigitStatus"
+							   th:value="${archive}" >
+					</td>
+				</tr>
+			</table>
+
+			<div style="width: 80%; margin: 10px auto;">
+
+				<input class="hidden_input" type="text"
+					   name="leadId"
+					   th:value="*{getId}">
+				<input type="submit" class="send_post_button" value="сохранить изменения">
+			</div>
+		</div>
+
+	</form>
+
+	<!----------------------------------------------------------------------------------->
+</div>
+</body>
+
+</html>

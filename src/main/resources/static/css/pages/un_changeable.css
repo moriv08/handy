@@ -1,0 +1,77 @@
+
+/*------ td style ------*/
+
+td.td_label{
+	height: 40px;
+	width: 330px;
+	font-weight: bold;
+	border: 1px solid lightgray;
+	border-radius: 4px 0 0 4px;
+	padding: 0;
+	line-height: 1.5;
+	background: #DCDCDC;
+}
+td.td_txt{
+	height: 40px;
+	line-height: 1.5;
+	padding: 0;
+	border: 1px solid lightgray;
+	border-radius: 0 4px 4px 0;
+	background: #DCDCDC;
+}
+td.td_txt_empty{
+	height: 40px;
+	line-height: 1.5;
+	padding: 0;
+	border: 1px solid lightgray;
+	border-radius: 0 4px 4px 0;
+	opacity: 0.8;
+}
+/*        */
+td.counter-documents_td_txt{
+	height: 40px;
+	width: 50px;
+	line-height: 1.5;
+	padding: 0;
+	border: 1px solid lightgray;
+	background: #E8E6D1;
+}
+
+
+
+/*td.td_unchangeable_label{*/
+/*	height: 40px;*/
+/*	width: 330px;*/
+/*	font-weight: bold;*/
+/*	border: 1px solid lightgray;*/
+/*	border-radius: 4px 0 0 4px;*/
+/*	padding: 0;*/
+/*	line-height: 1.5;*/
+/*	background: #DCDCDC;*/
+/*}*/
+/*td.td_unchangeable_txt{*/
+/*	height: 40px;*/
+/*	line-height: 1.5;*/
+/*	padding: 0;*/
+/*	border: 1px solid lightgray;*/
+/*	border-radius: 0 4px 4px 0;*/
+/*	background: #DCDCDC;*/
+/*}*/
+/*td.td_unchangeable_txt_empty{*/
+/*	height: 40px;*/
+/*	line-height: 1.5;*/
+/*	padding: 0;*/
+/*	border: 1px solid lightgray;*/
+/*	border-radius: 0 4px 4px 0;*/
+/*	opacity: 0.8;*/
+/*}*/
+/*			!*        *!*/
+/*td.counter-documents_td_txt{*/
+/*	height: 40px;*/
+/*	width: 50px;*/
+/*	line-height: 1.5;*/
+/*	padding: 0;*/
+/*	border: 1px solid lightgray;*/
+/*	background: #E8E6D1;*/
+/*}*/
+/*****************************************************************************************/

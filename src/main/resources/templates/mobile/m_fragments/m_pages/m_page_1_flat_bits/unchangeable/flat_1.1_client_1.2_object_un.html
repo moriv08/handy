@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------TABLE 1.1-------------------------------------------------------------->
+<div th:fragment="lead_obj" th:object="${lead}">
+
+	<div class="central_container">
+		<div class="table_header"> <p> 1.1. Клиент </p></div>
+
+		<table class="info_table">
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Имя: </p>
+				</td>
+				<td th:class="*{getName} ? td_unchangeable_txt :  td_unchangeable_txt_empty">
+					<span th:text="*{getName}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Телефон: </p>
+				</td>
+				<td th:class="*{getTel} ? td_unchangeable_txt :  td_unchangeable_txt_empty">
+					<span th:text="*{getTel}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Статус заявки: </p>
+				</td>
+				<td th:class="*{getLeadStatus} ? td_unchangeable_txt :  td_unchangeable_txt_empty">
+					<span th:text="*{getLeadStatus}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Оценка подготовлена для: </p>
+				</td>
+				<td th:class="*{getPrecontractType} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+					<span class="curent_data" th:text="*{getPrecontractType}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Дата следующего звонка: </p>
+				</td>
+				<td th:class="*{getControlDate} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+					<span th:text="*{getControlDate}"></span>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------TABLE 1.2-------------------------------------------------------------->
+
+	<div class="central_container">
+		<div class="table_header"><p> 1.2. Характеристики квартиры </p></div>
+
+		<table class="info_table">
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Адрес: </p>
+				</td>
+				<td th:class="*{getAddress} ? td_unchangeable_txt :  td_unchangeable_txt_empty">
+					<span th:text="*{getAddress}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p>Метро: </p>
+				</td>
+				<td th:class="*{getMetro} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+						<span th:text="*{getMetro}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p>Год постройки: </p>
+				</td>
+				<td th:class="*{getBuildYear} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+						<span th:text="*{getBuildYear}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p>Тип дома: </p>
+				</td>
+				<td th:class="*{getHouseType} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+						<span th:text="*{getHouseType}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p>Этаж/Этажей: </p>
+				</td>
+				<td th:class="*{getFlatFloor} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+						<span th:text="*{getFlatFloor}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p>Комнаты/кухня: </p>
+				</td>
+				<td th:class="*{getFlatRooms} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+						<span th:text="*{getFlatRooms}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_unchangeable_label">
+					<p> Площадь:</p>
+				</td>
+				<td th:class="*{getFlatSquare} ? td_unchangeable_txt : td_unchangeable_txt_empty">
+						<span th:text="*{getFlatSquare}"></span>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<!--------------------------------end 1.2------------------------------->
+</div>
+</body>
+</html>

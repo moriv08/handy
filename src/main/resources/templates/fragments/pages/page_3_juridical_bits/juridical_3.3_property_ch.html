@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_3_3">
+
+
+
+		<!-------------------------------- 3.3	------------------------------->
+		<div class="central_container">
+			<form action="/api/update/juridical/ownership" method="POST">
+
+				<div class="table_header"><p>3.3. Право собственности </p></div>
+
+				<table class="info_table">
+					<tr>
+						<td class="td_label">
+							<p> Основание права: </p>
+						</td>
+						<td th:class="*{getPropertyBasis} ? td_txt :  td_txt_empty">
+								<span class="curent_juristic_data" th:text="*{getPropertyBasis}"></span>
+								<input class="hidden_juristic_input" type="text" maxlength="75"
+									   name="basis"
+									   th:placeholder="*{getPropertyBasis}">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Собственники/прописаны: </p>
+						</td>
+						<td th:class="*{getOwners} ? td_txt :  td_txt_empty">
+							<span class="curent_juristic_data" th:text="*{getOwners}"></span>
+							<input class="hidden_juristic_input" type="text" maxlength="75"
+								   name="owners"
+								   th:placeholder="*{getOwners}">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Обременение: </p>
+						</td>
+						<td th:class="*{getBankCargo} ? td_txt :  td_txt_empty">
+							<span class="curent_juristic_data" th:text="*{getBankCargo}"></span>
+							<input class="hidden_juristic_input" type="text" maxlength="75"
+								   name="bankCargo"
+								   th:placeholder="*{getBankCargo}">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Оценка для : </p>
+						</td>
+						<td th:class="*{getContractType} ? td_txt :  td_txt_empty">
+							<span class="curent_juristic_data" th:text="*{getContractType}"></span>
+							<input class="hidden_juristic_input" type="text" maxlength="75"
+								   name="contractType"
+								   th:placeholder="*{getContractType}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+
+							<input type="hidden" name="leadId" th:value="${lead.getId}">
+							<input type="submit" class="send_post_button" value="внести изменения">
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<!--------------------------------------------------------------------->
+
+
+
+	</div>
+</html>

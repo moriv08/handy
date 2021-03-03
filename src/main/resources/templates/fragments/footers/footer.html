@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--------------------------------------home---------------------------------------------->
+<div th:fragment="home">
+	<footer>
+
+		<script th:src="@{/js/jquery-2.2.4.min.js}" type="text/javascript" ></script>
+		<script th:src="@{/js/js_pages/shared_scripts.js}" type="text/javascript"></script>
+		<script th:src="@{/js/js_pages/home.js}" type="text/javascript"></script>
+
+		<script th:src="@{/js/jquery_home.js}" type="text/javascript"></script>
+
+	</footer>
+</div>
+<!----------------------------------------------------------------------------------------->
+<!---------------------------------changeable pages---------------------------------------->
+<div th:fragment="changeable_pages">
+	<footer>
+
+		<script th:src="@{/js/jquery-2.2.4.min.js}" type="text/javascript" ></script>
+
+		<script th:src="@{/js/js_pages/shared_scripts.js}" type="text/javascript"></script>
+		<script th:src="@{/js/js_pages/flat_updatable.js}" type="text/javascript"></script>
+
+	</footer>
+</div>
+<!----------------------------------------------------------------------------------------->
+<!------------------------------un changeable pages---------------------------------------->
+<div th:fragment="un_changeable_pages">
+
+	<footer>
+		<script th:src="@{/js/jquery-2.2.4.min.js}" type="text/javascript" ></script>
+		<script th:src="@{/js/js_pages/shared_scripts.js}" type="text/javascript"></script>
+
+	</footer>
+
+</div>
+<!----------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------->
+<div th:fragment="mobile_pages">
+	<footer>
+
+		<script th:src="@{/js/jquery-2.2.4.min.js}" type="text/javascript" ></script>
+		<script th:src="@{/js/js_pages/mobile_flat_updatable.js}" type="text/javascript"></script>
+
+
+	</footer>
+</div>
+<!----------------------------------------------------------------------------------------->
+</html>

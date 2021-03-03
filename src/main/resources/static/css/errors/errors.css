@@ -1,0 +1,23 @@
+
+.error_div{
+	min-height: 300px;
+	min-width: 700px;
+	margin: 100px auto;
+	background-color: #f2f0eb;
+	text-align: center;
+}
+
+.error_txt_format{
+	font-size: 25px;
+	font-width: bold;
+}
+
+.error_txt_format a{
+	font-size: 25px;
+	text-decoration: none;
+	color: blue;
+}
+
+.error_txt_format a:hover{
+	color: gray;
+}

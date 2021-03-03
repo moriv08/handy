@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_4_1">
+
+
+		<!-------------------------------- 4.1	------------------------------->
+		<form action="/api/update/sale/calls" method="GET">
+			<div class="central_container">
+				<div class="table_header"><p> 4.1. Статистика </p></div>
+
+				<table class="info_table">
+					<tr>
+						<td class="td_label">
+							<p> Все звонки и просмотры: </p>
+						</td>
+						<td class="td_txt">
+							<p> Всего, <b>[[${lead.getAllCalls}]]</b> звонков и <b> [[${lead.getAllViews}]]</b>  просмотров </p>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Звонки: </p>
+						</td>
+						<td class="td_txt_empty">
+							<span class="curent_juristic_data"></span>
+							<input class="hidden_juristic_input" type="number" name="curentCalls">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Просмотры: </p>
+						</td>
+						<td class="td_txt_empty">
+							<span class="curent_data"></span>
+							<input class="hidden_input" type="number" name="curentViews">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Короткая ос: </p>
+						</td>
+						<td class="td_txt_empty">
+							<span class="curent_data" th:text="${lead.briefComment}"></span>
+							<input class="hidden_input" type="text" name="briefComment" maxlength="110">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+
+							<input type="hidden" name="leadId" th:value="${lead.getId}">
+							<input type="submit" class="send_post_button" value="обновить просмотры">
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</form>
+
+
+
+	</div>
+</html>

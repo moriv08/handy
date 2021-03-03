@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="weak_side_obj">
+	<!-------------------------------- 1.3	------------------------------->
+
+	<div class="central_container" th:object="${weakSide}">
+		<div class="table_header">
+			<p>1.3. Дополнительная информация по квартире</p>
+		</div>
+
+		<table class="info_table">
+			<tr>
+				<td class="td_label">
+					<p> 1й или последний этаж: </p>
+				</td>
+				<td th:if="${weakSide}" th:class="*{getFirstLast} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getFirstLast}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="firstLast"
+						   th:placeholder="*{getFirstLast}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Вид на козырек: </p>
+				</td>
+				<td th:if="${weakSide}" th:class="*{getBadView} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getBadView}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="badView"
+						   th:placeholder="*{getBadView}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Обременение: </p>
+				</td>
+				<td th:if="${weakSide}" th:class="*{getCargo} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getCargo}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="cargo"
+						   th:placeholder="*{getCargo}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Газовая колонка: </p>
+				</td>
+				<td th:if="${weakSide}" th:class="*{getGazStation} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getGazStation}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="gazStation"
+						   th:placeholder="*{getGazStation}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Другое:</p>
+				</td>
+				<td th:if="${weakSide}" th:class="*{getOther} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getOther}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="other"
+						   th:placeholder="*{getOther}">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<!--------------------------------------------------------------------->
+</div>
+</body>
+</html>

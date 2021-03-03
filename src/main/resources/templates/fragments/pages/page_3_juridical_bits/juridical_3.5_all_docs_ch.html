@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="tbl_3_5">
+	<!-------------------------------- 3.5	------------------------------->
+	<div class="central_container">
+		<form action="/api/update/juridical/existing_docs" method="POST">
+
+			<div class="table_header"><p> 3.5.1. Документы к сделке </p></div>
+
+			<table class="info_table" th:if="*{getRequiredDocuments.size} > 0">
+				<tr>
+					<th><p>N</p></th>
+					<th><p>ЗАПРАШИВАЕМЫЙ ДОКУМЕНТ</p></th>
+					<th><p>ГОТОВНОСТЬ</p></th>
+					<th></th>
+					<th><p>УДАЛИТЬ</p></th>
+				</tr>
+				<tr th:each="doc, state: *{getRequiredDocuments}">
+
+					<td class="counter-documents_td_txt" th:text="${state.count}"></td>
+					<td class="td_txt" th:text="${doc.getDoc}"></td>
+
+					<td th:class="${doc.getDocExisting} ? 'doc_exists' : 'doc_doesnt'">
+						<input type="checkbox" class="check_box"
+							   name="existingDocs"
+							   th:value="${doc.getId}" >
+					</td>
+					<td></td>
+					<td th:class="${doc.getDocExisting} ? 'doc_exists' : 'doc_doesnt'">
+						<input type="checkbox" class="check_box"
+							   name="deletDocs"
+							   th:value="${doc.getId}">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+
+						<input type="hidden" name="leadId" th:value="${lead.getId}">
+						<input type="submit" class="send_post_button" value="готов / удалить">
+					</td>
+					<td></td>
+				</tr>
+			</table>
+
+		</form>
+	</div>
+	<!--------------------------------------------------------------------->
+	<!-------------------------------- 3.5.2	------------------------------->
+	<div class="central_container">
+		<form action="/api/update/juridical/request_docs" method="POST">
+			<div class="table_header"><p> 3.5.2. Запросить документы </p></div>
+
+			<table class="info_table">
+				<tr>
+					<td>
+						<textarea type="text" rows="15" cols="50" wrap="hard" class="textarea"
+								  name="required_documents"
+								  placeholder="Введите названия необходимых к сделке документов разделяя их точкой с запятой..."></textarea>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+
+						<input type="hidden" name="leadId" th:value="${lead.getId}">
+						<input type="submit" class="send_post_button" value="запросить документы">
+					</td>
+				</tr>
+			</table>
+
+		</form>
+	</div>
+	<!--------------------------------------------------------------------->
+</div>
+
+</body>
+</html>

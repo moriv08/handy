@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<!-------------------------------- HEADER	-------------------->
+		<div th:insert="fragments/headers/header::changeable_pages"></div>
+		<!-------------------------------------------------------------->
+	</head>
+	<body>
+		<div class="main">
+
+			<!----------------------HOME AND LOGOUT BUTTON---------------->
+			<div th:insert="fragments/common/home_button :: go_home"></div>
+			<!------------------------------------------------------------>
+			<!------------------------------------TOP LABELS------------------------------------->
+<!--			<div th:insert="admin/top_labels/flat_top_labels :: link_labels"></div>-->
+			<!----------------------------------------------------------------------------------->
+
+
+			<div style="margin: 0 auto; width: 70%">
+				<form action="/api/statistic" method="get">
+					<select class="expert_selections"
+							name="expertId">
+						<option value="">выберите эксперта</option>
+						<option th:each="expert : ${expertList}"
+								name="currentExpertId"
+								th:value="${expert.value}"
+								th:text="${expert.key}"></option>
+					</select>
+					<input type="submit" class="send_post_button"
+						   value="статистика эксперта">
+				</form>
+			</div>
+
+					<br/>
+
+			<div style="float: left; width: 8%; " th:each="stat : ${statistics}">
+
+				<table class="statistic_table">
+					<thead>
+					<th>
+						<p th:text="${stat.key}"></p>
+					</th>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							<div class="info_block">
+								<p th:text="'Всего: ' +  ${stat.value.get(0)}"></p>
+								<hr>
+								<p th:text="'Договоры: ' +  ${stat.value.get(1)}"></p>
+								<hr>
+								<p th:text="'Сделки: ' +  ${stat.value.get(2)}"></p>
+								<hr>
+							</div>
+
+							<div class="yellow_block"
+								 th:style="${stat.value} ? 'height: ' + ${stat.value.get(0)} + 'px' : 'height: 0px'">
+
+								<div class="orange_block"
+									 th:style="${stat.value} ? 'height: ' + ${stat.value.get(1)} + 'px' : 'height: 0px'">
+
+									<div class="green_block"
+										 th:style="${stat.value} ? 'height: ' + ${stat.value.get(2)} + 'px' : 'height: 0px'">
+
+									</div>
+
+								</div>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<br/>
+			<br/>
+
+			<div th:if="${expert}" class="expert_title_div">
+				<p th:text="'Статистика, эксперт: ' + ${expert}"></p>
+			</div>
+
+			<br/>
+
+			<div style="float: left; width: 8%; " th:each="stat : ${expertStatistic}">
+
+				<table class="statistic_table">
+					<thead>
+					<th>
+						<p th:text="${stat.key}"></p>
+					</th>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							<div class="info_block">
+								<p th:text="'Всего: ' +  ${stat.value.get(0)}"></p>
+								<hr>
+								<p th:text="'Договоры: ' +  ${stat.value.get(1)}"></p>
+								<hr>
+								<p th:text="'Сделки: ' +  ${stat.value.get(2)}"></p>
+								<hr>
+							</div>
+
+							<div class="yellow_block"
+								 th:style="${stat.value} ? 'height: ' + ${stat.value.get(0) * 10} + 'px' : 'height: 0px'">
+
+								<div class="orange_block"
+									 th:style="${stat.value} ? 'height: ' + ${stat.value.get(1) * 10} + 'px' : 'height: 0px'">
+
+									<div class="green_block"
+										 th:style="${stat.value} ? 'height: ' + ${stat.value.get(2) * 10} + 'px' : 'height: 0px'">
+
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<br/>
+			<br/>
+			<br/>
+				<!--- BOOTOM COMFORT BLOCK 	----------->
+				<div class="bottom_comfort_block"></div>
+				<!------------------------------------->
+
+		</div>
+		<!----------------------------------------    end of main block  ----------------------------------------->
+	</body>
+	<!---------------------------------FOOTER------------------------>
+	<div th:insert="fragments/footers/footer::changeable_pages"></div>
+	<!--------------------------------------------------------------->
+</html>

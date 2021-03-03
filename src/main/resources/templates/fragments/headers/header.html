@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+	<!----------------------- header home  ---------------------------------------->
+	<div th:fragment="home">
+		<title th:if="${person}" th:text="${person.getName}"></title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/home/home_page.css}">
+
+	</div>
+	<!---------------------------------------------------------------------------------->
+	<!-------------------------------- changeable page header	---------------------------->
+	<div th:fragment="changeable_pages">
+
+		<title th:if="${person}" th:text="${person.getName}"></title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+
+		<link rel="stylesheet" th:href="@{/css/pages/lead_pages_style.css}">
+		<link rel="stylesheet" th:href="@{/css/pages/foto.css}">
+
+
+		<link rel="stylesheet" th:href="@{/css/pages/changeable.css}">
+
+<!--		<link rel="stylesheet" th:href="@{/css/personal/user_booking.css}">-->
+
+
+		<link rel="stylesheet" th:href="@{/css/personal/admin.css}">
+	</div>
+	<!---------------------------------------------------------------------------------->
+	<!-------------------------------- unchangeable page header	------------------------>
+	<div th:fragment="un_changeable_pages">
+
+		<title th:if="${person}" th:text="${person.getName}"></title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/pages/lead_pages_style.css}">
+		<link rel="stylesheet" th:href="@{/css/pages/foto.css}">
+
+
+
+		<link rel="stylesheet" th:href="@{/css/pages/un_changeable.css}">
+
+	</div>
+	<!----------------------------------------------------------------------------------->
+	<!---------------------------MOBILE-------------------------------------------------->
+	<!--------------------------------mobile home---------------------------------------->
+	<div th:fragment="mobile_home">
+
+		<title th:if="${person}" th:text="${person.getName}"></title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/home/mobile_home.css}">
+		<!--		<link rel="stylesheet" th:href="@{/css/pages/foto.css}">-->
+
+
+
+		<!--		<link rel="stylesheet" th:href="@{/css/pages/un_changeable.css}">-->
+
+	</div>
+	<!-------------------------------------------------------------------------------------->
+	<!--------------------------------mobile changeable pages------------------------------->
+	<div th:fragment="m_changeable_pages">
+
+		<title th:if="${person}" th:text="${person.getName}"></title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+
+		<link rel="stylesheet" th:href="@{/css/pages/m_lead_pages_style.css}">
+		<link rel="stylesheet" th:href="@{/css/pages/m_foto.css}">
+
+
+		<link rel="stylesheet" th:href="@{/css/pages/m_changeable.css}">
+
+		<!--		<link rel="stylesheet" th:href="@{/css/personal/user_booking.css}">-->
+
+
+		<link rel="stylesheet" th:href="@{/css/personal/admin.css}">
+	</div>
+	<!---------------------------------------------------------------------------------->
+</head>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------TABLE 1.1-------------------------------------------------------------->
+<div th:fragment="lead_obj" th:object="${lead}">
+
+	<div class="central_container">
+		<div class="table_header"> <p> 1.1. Клиент </p></div>
+
+		<table class="info_table">
+			<tr>
+				<td class="td_label">
+					<p> Имя: </p>
+				</td>
+				<td th:class="*{getName} ? td_txt :  td_txt_empty">
+					<span class="curent_data"
+						  th:text="*{getName}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="leadOwnerName"
+						   th:placeholder="*{getName}" >
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Телефон: </p>
+				</td>
+				<td th:class="*{getTel} ? td_txt :  td_txt_empty">
+					<span class="curent_data" th:text="*{getTel}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="tel"
+						   th:placeholder="*{getTel}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Статус заявки: </p>
+				</td>
+				<td th:class="*{getLeadStatus} ? td_txt :  td_txt_empty">
+					<span class="curent_data" th:text="*{getLeadStatus}"></span>
+					<select class="hidden_input"
+							name="newLeadStatus">
+						<option value="">можно изменить статус</option>
+						<option th:each="leadStatus : ${leadStatusList}"
+								name="status"
+								th:value="${leadStatus}"
+								th:text="${leadStatus}"></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Оценка подготовлена для: </p>
+				</td>
+				<td th:class="*{getPrecontractType} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getPrecontractType}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="precontractType"
+						   th:placeholder="*{getPrecontractType}" >
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Дата следующего звонка: </p>
+				</td>
+				<td th:class="*{getControlDate} ? td_txt : td_txt_empty">
+					<span class="curent_data" th:text="*{getControlDate}"></span>
+					<input class="hidden_input" type="date"
+						   name="controlDate"
+						   th:placeholder="*{getControlDate}">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------TABLE 1.2-------------------------------------------------------------->
+
+	<div class="central_container">
+		<div class="table_header"><p> 1.2. Характеристики квартиры </p></div>
+
+		<table class="info_table">
+			<tr>
+				<td class="td_label">
+					<p> Адрес: </p>
+				</td>
+				<td th:class="*{getAddress} ? td_txt :  td_txt_empty">
+					<span class="curent_data" th:text="*{getAddress}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="address"
+						   th:placeholder="*{getAddress}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Метро: </p>
+				</td>
+				<td th:class="*{getMetro} ? td_txt : td_txt_empty">
+						<span class="curent_data"
+							  th:text="*{getMetro}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="metro"
+						   th:placeholder="*{getMetro}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Год постройки: </p>
+				</td>
+				<td th:class="*{getBuildYear} ? td_txt : td_txt_empty">
+						<span class="curent_data"
+							  th:text="*{getBuildYear}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="buildYear"
+						   th:placeholder="*{getBuildYear}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Тип дома: </p>
+				</td>
+				<td th:class="*{getHouseType} ? td_txt : td_txt_empty">
+						<span class="curent_data"
+							  th:text="*{getHouseType}"></span>
+					<input class="hidden_input" type="text" maxlength="75"
+						   name="houseType"
+						   th:placeholder="*{getHouseType}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Этаж/Этажей: </p>
+				</td>
+				<td th:class="*{getFlatFloor} ? td_txt : td_txt_empty">
+						<span class="curent_data"
+							  th:text="*{getFlatFloor}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="floor"
+						   th:placeholder="*{getFlatFloor}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p>Комнаты/кухня: </p>
+				</td>
+				<td th:class="*{getFlatRooms} ? td_txt : td_txt_empty">
+						<span class="curent_data"
+							  th:text="*{getFlatRooms}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="rooms"
+						   th:placeholder="*{getFlatRooms}">
+				</td>
+			</tr>
+			<tr>
+				<td class="td_label">
+					<p> Площадь:</p>
+				</td>
+				<td th:class="*{getFlatSquare} ? td_txt : td_txt_empty">
+						<span class="curent_data"
+							  th:text="*{getFlatSquare}"></span>
+					<input class="hidden_input" type="text" maxlength="50"
+						   name="flatSquare"
+						   th:placeholder="*{getFlatSquare}">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<!--------------------------------end 1.2------------------------------->
+</div>
+</body>
+</html>

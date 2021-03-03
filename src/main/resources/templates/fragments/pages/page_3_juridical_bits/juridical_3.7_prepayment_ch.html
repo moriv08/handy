@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_3_7">
+
+
+
+
+		<!-------------------------------- 3.7	------------------------------->
+		<form action="/api/update/juridical/pretayment_contract" method="POST">
+			<div class="central_container">
+				<div class="table_header"><p> 3.7. Аванс </p></div>
+
+				<table class="info_table">
+					<tr>
+						<td class="td_label">
+							<p> Вид аванса: </p>
+						</td>
+						<td th:class="*{getPrepaymentType} ? td_txt :td_txt_empty">
+							<span class="curent_juristic_data"
+								  th:text="*{getPrepaymentType}"></span>
+							<input class="hidden_juristic_input" type="text" maxlength="75"
+								   name="prepaymentType"
+								   th:placeholder="*{getPrepaymentType}">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Дата заключения аванса: </p>
+						</td>
+						<td th:class="*{getPrepaymentStart} ? td_txt :  td_txt_empty">
+							<span class="curent_juristic_data"
+								  th:text="*{getPrepaymentStart}"></span>
+							<input class="hidden_juristic_input" type="date"
+								   name="prepaymentStart">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Дата окончания аванса: </p>
+						</td>
+						<td th:class="*{getPrepaymentEnd} ? td_txt : td_txt_empty">
+							<span class="curent_juristic_data"
+								  th:text="*{getPrepaymentEnd}"></span>
+							<input class="hidden_juristic_input" type="date"
+								   name="prepaymentEnd">
+						</td>
+					</tr>
+					<tr>
+						<td>
+
+							<input type="hidden" name="leadId" th:value="${lead.getId}">
+							<input type="submit" class="send_post_button" value="внести изменения">
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+		<!--------------------------------------------------------------------->
+
+
+
+	</div>
+</html>

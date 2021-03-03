@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<!-------------------------------- HEADER	-------------------->
+		<div th:insert="fragments/headers/header::changeable_pages"></div>
+		<!-------------------------------------------------------------->
+	</head>
+	<body>
+		<div class="main">
+
+			<!----------------------HOME AND LOGOUT BUTTON---------------->
+			<div th:insert="fragments/common/home_button :: go_home"></div>
+			<!------------------------------------------------------------>
+			<!------------------------------------TOP LABELS------------------------------------->
+<!--			<div th:insert="admin/top_labels/flat_top_labels :: link_labels"></div>-->
+			<!----------------------------------------------------------------------------------->
+
+			<div id="content">
+
+				<div class="central_container">
+
+					<br/>
+
+					<form action="/api/update/admin/make_new_lead" method="post">
+
+						<input class="big_inputs" type="text" maxlength="75" name="tel" placeholder="Телефон клиента (в любом формате с пробелами или тире)">
+<!--						<input class="big_inputs" type="tel" name="tel" pattern="2[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>-->
+						<select class="big_inputs"
+								name="expert">
+							<option value="">эксперты</option>
+							<!--									name="expert"-->
+							<option th:each="theExpert : ${experts}"
+									th:value="${theExpert}"
+									th:text="${theExpert}"></option>
+						</select>
+						<input class="big_inputs" type="date" name="controlDate"
+							   placeholder="Вводите дату только если контрольная дата завтра или позже">
+						<br/>
+
+						<input class="big_inputs" type="text" maxlength="75" name="leadOwnerName" placeholder="ФИО клиента">
+						<input class="big_inputs" type="text" maxlength="75" name="address" placeholder="Адрес">
+						<input class="big_inputs" type="text" maxlength="75" name="floor" placeholder="Этаж/этажность">
+						<input class="big_inputs" type="text" maxlength="75" name="rooms" placeholder="Колличество комнат">
+						<input class="big_inputs" type="text" maxlength="75" name="flatSquare" placeholder="Общая площадь/площадь по комнатам/площадь кухни">
+<!--						<input class="big_inputs" type="text" maxlength="75" name="tel" placeholder="Балкон/лоджия">-->
+<!--						<input class="big_inputs" type="text" maxlength="75" name="tel" placeholder="Ремон ">-->
+<!--						<input class="big_inputs" type="text" maxlength="75" name="tel" placeholder="Обременение/название банка/остаток по долгу ">-->
+
+						<br/>
+
+						<input class="big_inputs" type="text" maxlength="75" name="bookingLocation" placeholder="Название бронируемого ЖК">
+						<input class="big_inputs" type="text" maxlength="75" name="bookingPrice" placeholder="Стоимость бронируемого объекта">
+						<input class="big_inputs" type="text" maxlength="75" name="bookingRooms" placeholder="Колличество комнат">
+						<input class="big_inputs" type="text" maxlength="75" name="bookingSquare" placeholder="Площадь бронируемого объекта">
+						<input class="big_inputs" type="text" maxlength="75" name="bookingHanding" placeholder="Сдача объекта">
+						<input class="big_inputs" type="date" name="bookingStart" placeholder="Начало брони">
+						<input class="big_inputs" type="date" name="bookingEnd" placeholder="Конец брони">
+
+						<input type="text" class="hidden_input" name="leadId" value="0">
+						<input type="submit" class="send_post_button" style="margin-left: 10%; display: block" value="Создать новую заявку">
+
+					</form>
+				</div>
+
+				<!--- BOOTOM COMFORT BLOCK 	----------->
+				<div class="bottom_comfort_block"></div>
+				<!------------------------------------->
+
+			</div>
+			<!--------------------------------------   end content   ------------------------------------------->
+		</div>
+		<!----------------------------------------    end of main block  ----------------------------------------->
+	</body>
+	<!---------------------------------FOOTER------------------------>
+	<div th:insert="fragments/footers/footer::changeable_pages"></div>
+	<!--------------------------------------------------------------->
+</html>

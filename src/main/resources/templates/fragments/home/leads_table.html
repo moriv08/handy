@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="leads_table">
+
+
+
+		<table id="bottom_leads_table">
+			<thead>
+			<tr>
+				<th width="20px"> <p>№</p> </th>
+				<th width="40px"> <p>ЗАЯВКА</p> </th>
+				<th width="85px"> <p>ДАТА</p> </th>
+				<th width="155px"> <p>СТАТУС</p> </th>
+				<th><p>АДРЕС</p></th>
+				<th><p>фИО</p></th>
+				<th width="155px"><p>ТЕЛЕФОН</p></th>
+				<th width="85px"><p>СЛЕДУЮЩИЙ ЗВОНОК</p></th>
+				<th width="100px"> <p>ЭКСПЕРТ</p> </th>
+				<th width="125px"> <p>ЦЕНА</p> </th>
+				<th> <p>СУПЕР</p> </th>
+				<th width="125px"> <p>СУПЕР ЦЕНА</p> </th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:if="${ifNothingToShow}" style="text-align: center;">
+				<td colspan="12"> Данных удовлетворяющих поиску не найдено. </td>
+			</tr>
+
+			<tr th:each="lead, state : ${allActiveLeads}">
+				<td>
+					<a th:href="@{'/api/flat/' +${lead.getId}}"
+					   th:text="${state.count}"></a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getId}"></a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getLeadDate}"></a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getLeadStatus}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getAddress}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getName}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getTel}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getControlDate}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getExpert.getName}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getExpertPrice}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getExpert.getSuperuser.getName}"> </a>
+				</td>
+				<td>
+					<a th:href="@{'/api/flat/' + ${lead.getId}}"
+					   th:text="${lead.getSuperPrice()}"> </a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+
+
+	</div>
+</html>

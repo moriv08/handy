@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!------------------------------------------------- 1.4	----------------------------------------------------------------->
+<div th:fragment="booking_obj">
+
+	<div class="central_container" th:object="${booking}">
+
+		<div class="table_header">
+			<p>1.4. Бронь</p>
+		</div>
+
+		<div class="lead_bit">
+			<p class="input_label"> ЖК: </p>
+			<input type="text" th:class="*{getLocation} ? mobile_input : empty_mobile_input"
+				   name="bookingLocation"
+				   th:value="*{getLocation}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Цена: </p>
+			<input type="text" th:class="*{getPrice} ? mobile_input : empty_mobile_input"
+				   name="bookingPrice"
+				   th:value="*{getPrice}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Сдача: </p>
+			<input type="text" th:class="*{getHanding} ? mobile_input : empty_mobile_input"
+				   name="bookingHanding"
+				   th:value="*{getHanding}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Площадь: </p>
+			<input type="text" th:class="*{getSquare} ? mobile_input : empty_mobile_input"
+				   name="bookingSquare"
+				   th:value="*{getSquare}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Комнат: </p>
+			<input type="text" th:class="*{getRooms} ? mobile_input : empty_mobile_input"
+				   name="bookingRooms"
+				   th:value="*{getRooms}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Начало брони: </p>
+			<input type="date" th:class="*{getBookingStart} ? mobile_input : empty_mobile_input"
+				   name="bookingStart"
+				   th:value="*{getBookingStart}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Бронь до: </p>
+			<input type="date" th:class="*{getBookingEnd} ? mobile_input : empty_mobile_input"
+				   name="bookingEnd"
+				   th:value="*{getBookingEnd}">
+		</div>
+
+	</div>
+</div>
+<!---------------------------------------------------------------------------------------------------------->
+</body>
+</html>

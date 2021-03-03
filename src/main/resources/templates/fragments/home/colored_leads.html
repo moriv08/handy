@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<!--------------------------------------------------ADVANCED COLORED LEADS--------------------------------------------------------------------->
+<div th:fragment="advanced">
+
+	<div th:if="${ifNothingToShow}" style="margin-top: 70px; text-align: center;">
+		<p>По данному фильтру</p>
+		<p>активных заявок нет</p>
+	</div>
+
+
+
+<!--	<ul class="colored_leads_table">-->
+		<ul class="colored_leads_table"
+			th:each="currentLead : ${allActiveLeads}">
+			<li class="blink_green_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${blinkingNewLead}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="blink_red_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${docsChecking} or
+				${currentLead.getLeadDigitStatus} == ${docOk}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="red_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${newExpertPrice}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="yellow_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${newSuperPrice} or ${currentLead.getLeadDigitStatus} == ${newSuperAnswer}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="green_lead"
+				th:if="${currentLead.getLeadDigitStatus} >= ${greenStartContract} and ${currentLead.getLeadDigitStatus} < ${greenEndContract}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+		</ul>
+<!--	</ul>-->
+
+
+<!--	<table class="colored_leads_table">-->
+<!--		<tr th:each="currentLead : ${allActiveLeads}">-->
+<!--			<td class="blink_green_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${blinkingNewLead}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--				<h1>blink_green_lead</h1>-->
+<!--			</td>-->
+<!--			<td class="blink_red_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${docsChecking}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--				<h1>blink_red_lead</h1>-->
+<!--			</td>-->
+<!--			<td class="red_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${newExpertPrice}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--				<h1>red_lead</h1>-->
+<!--			</td>-->
+<!--			<td class="yellow_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${newSuperPrice} or ${currentLead.getLeadDigitStatus} == ${newSuperAnswer}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--				<h1>yellow_lead</h1>-->
+<!--			</td>-->
+<!--			<td class="green_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} >= ${greenStartContract} and ${currentLead.getLeadDigitStatus} < ${greenEndContract}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--				<h1>green_lead</h1>-->
+<!--			</td>-->
+<!--		</tr>-->
+<!--	</table>-->
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------EXPERT--------------------------------------------------------------------------->
+<div th:fragment="expert">
+
+	<div th:if="${ifNothingToShow}" style="margin-top: 70px; text-align: center;">
+		<p>По данному фильтру</p>
+		<p>активных заявок нет</p>
+	</div>
+
+
+<!--	<table class="colored_leads_table">-->
+		<ul  class="colored_leads_table"
+			 th:each="currentLead : ${allActiveLeads}">
+
+			<li class="blink_green_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${blinkingNewLead}" >
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="blink_red_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${newSuperPrice} or
+						${currentLead.getLeadDigitStatus} == ${newSuperAnswer} or
+						${currentLead.getLeadDigitStatus} == ${docOk}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="red_lead"
+				th:if="${currentLead.getEmergencyStatusDigit} == ${redTodayCall} or ${currentLead.getEmergencyStatusDigit} == ${redYesterdayCall}" >
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+					th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="yellow_lead"
+				th:if="${currentLead.getLeadDigitStatus} == ${docsChecking} or ${currentLead.getLeadDigitStatus} == ${yellowExpertWaiting}" >
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+			<li class="green_lead"
+				th:if="${currentLead.getLeadDigitStatus} >= ${greenStartContract} and ${currentLead.getLeadDigitStatus} < ${greenEndContract}">
+				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"
+				   th:text="${currentLead.getAddress}">
+				</a>
+			</li>
+		</ul>
+<!--	</table>-->
+
+
+<!--	<table class="colored_leads_table">-->
+<!--		<tr th:each="currentLead : ${allActiveLeads}">-->
+<!--			<td class="blink_green_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${blinkingNewLead}" >-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--			</td>-->
+<!--			<td class="blink_red_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${newSuperPrice} or-->
+<!--						${currentLead.getLeadDigitStatus} == ${newSuperAnswer}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--			</td>-->
+<!--			<td class="red_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${redTodayCall} or ${currentLead.getLeadDigitStatus} == ${redYesterdayCall}" >-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--			</td>-->
+<!--			<td class="yellow_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} == ${yellowExpertWaiting}" >-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--			</td>-->
+<!--			<td class="green_lead"-->
+<!--				th:if="${currentLead.getLeadDigitStatus} >= ${greenStartContract} and ${currentLead.getLeadDigitStatus} < ${greenEndContract}">-->
+<!--				<a th:href="@{'/api/flat/' + ${currentLead.getId} }"-->
+<!--				   th:text="${currentLead.getAddress}">-->
+<!--				</a>-->
+<!--			</td>-->
+<!--		</tr>-->
+<!--	</table>-->
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>

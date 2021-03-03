@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_3_5">
+
+
+
+		<!-------------------------------- 3.5	------------------------------->
+		<form action="/api/update/juridical/existing_docs" method="POST">
+
+			<div class="central_container">
+
+				<table class="info_table" th:if="*{getRequiredDocuments.size} > 0">
+					<tr>
+						<th><p>N</p></th>
+						<th><p>ДОКУМЕНТЫ НЕОБХОДИМЫЕ К СДЕЛКЕ</p></th>
+						<th><p>ГОТОВНОСТЬ</p></th>
+					</tr>
+					<tr th:each="doc, state: *{getRequiredDocuments}">
+						<td class="td_txt" th:text="${state.count}"></td>
+						<td class="td_txt" th:text="${doc.getDoc}"></td>
+						<td th:class="${doc.getDocExisting} ? 'doc_exists' : 'doc_doesnt'">
+							<input type="checkbox" class="check_box"
+								   name="existingDocs"
+								   th:value="${doc.getId}">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+
+							<input type="hidden" name="leadId" th:value="${lead.getId}">
+							<input type="submit" class="send_post_button" value="подтвердить готовность">
+						</td>
+						<td></td>
+					</tr>
+				</table>
+
+			</div>
+
+		</form>
+		<!--------------------------------------------------------------------->
+		<!-------------------------------- 3.5.2	------------------------------->
+		<form action="/api/update/juridical/request_docs" method="POST">
+
+			<div class="central_container">
+
+					<table class="info_table">
+						<tr>
+							<td>
+								<textarea type="text" rows="15" cols="50" wrap="hard" class="textarea"
+										  name="required_documents"
+										  placeholder="Введите названия необходимых к сделке документов разделяя их точкой с запятой..."></textarea>
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+
+								<input type="hidden" name="leadId" th:value="${lead.getId}">
+								<input type="submit" class="send_post_button" value="запросить документы">
+							</td>
+						</tr>
+					</table>
+
+			</div>
+
+		</form>
+		<!--------------------------------------------------------------------->
+
+
+	</div>
+</html>

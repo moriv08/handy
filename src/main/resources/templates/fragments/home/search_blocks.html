@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!----------------------- ADMIN SEARCHER ----------------------------->
+<!---------------filters searcher------------------------>
+<div th:fragment="label_filters">
+
+	<div class="search_block">
+		<div class="filters_users">
+
+			<div class="host_filters_label">
+				<a href="/">Группы</a>
+			</div>
+			<div class="faded_filters_label">
+				<a href="/api/home/home_expert">Эксперты</a>
+			</div>
+
+		</div>
+
+		<div style="float: left">
+			<form action="/api/searcher/find/advanced_query" method="GET">
+				<input type="text" class="searcher" maxlength="30"
+					   name="wanted"
+					   placeholder="введите номер заявки или адрес...">
+				<input type="hidden" name="role"
+					   th:value="${role}">
+				<input type="submit" class="searching" value="найти">
+			</form>
+		</div>
+
+		<div class="plus_lead_div" >
+			<a href="/api/update/admin/new_lead">
+				<img th:src="@{/img/some/plus.png}" alt="home" class="plus_lead_img" >
+			</a>
+		</div>
+
+		<div class="plus_lead_div" >
+			<a href="/api/statistic">
+				<img th:src="@{/img/some/stat.png}" alt="home" class="statistic_img" >
+			</a>
+		</div>
+
+	</div>
+
+</div>
+<!---------------------------------------------------------------------->
+<!------------------------ ADMIN  SEARCHER ----------------------------->
+<!---------------experts searcher------------------------>
+<div th:fragment="label_experts">
+
+	<div class="search_block">
+		<div class="filters_users">
+
+			<div class="faded_filters_label">
+				<a href="/">Группы</a>
+			</div>
+			<div class="host_filters_label">
+				<a href="/api/home/home_expert">Эксперты</a>
+			</div>
+
+		</div>
+
+		<div style="float: left">
+			<form action="/api/searcher/find/advanced_query" method="GET">
+				<input type="text" class="searcher" maxlength="30"
+					   name="wanted"
+					   placeholder="введите номер заявки или адрес...">
+				<input type="hidden"
+					   name="role"
+					   th:value="${role}">
+				<input type="submit" class="searching" value="найти">
+			</form>
+
+		</div>
+
+		<div class="plus_lead_div" >
+			<a href="/api/update/admin/new_lead">
+				<img th:src="@{/img/some/plus.png}" alt="home" class="plus_lead_img" >
+			</a>
+		</div>
+
+		<div class="plus_lead_div" >
+			<a href="/api/statistic">
+				<img th:src="@{/img/some/stat.png}" alt="home" class="statistic_img" >
+			</a>
+		</div>
+
+	</div>
+</div>
+<!---------------------------------------------------------------------->
+<!----------------------- EXPERT  SEARCHER ----------------------------->
+<div th:fragment="expert_searcher">
+
+	<div class="search_block">
+		<div class="filters_users">
+		</div>
+
+		<form action="/api/searcher/find/expert_query" method="GET">
+			<input type="text" class="searcher" maxlength="30"
+				   name="wanted"
+				   placeholder="заявка, адрес, телефон, имя...">
+
+			<input type="submit" class="searching" value="найти">
+		</form>
+
+	</div>
+
+</div>
+
+<!--------------------------------------------------------------->
+
+</body>
+</html>

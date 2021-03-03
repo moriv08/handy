@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Такой страницы не существует</title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/errors/errors.css}">
+		
+	</head>
+	<body>
+		<div class="main">
+
+<!--			<p th:text="${status}"></p>-->
+<!--			<p th:text="${error}"></p>-->
+<!--			<p th:text="${message}"></p>-->
+<!--			<p th:if="${exception}" th:text="${exception}"></p>-->
+<!--			<p th:unless="${trace}" th:text="|trace == null|"></p>-->
+<!--			<p th:if="${trace}" th:text="${trace}"></p>-->
+<!--			<p th:unless="${trace}" th:text="|trace == null|"></p>-->
+
+			<div class="error_div">
+				<span class="error_txt_format">Проверьте телефон и имя эксперта.</span>
+				<br>
+				<span class="error_txt_format">Для возврата на предыдущую страницу
+					<a href="#" onclick="history.back();return false;"> -> Нажмите сюда <- </a>.
+				</span>
+				<br>
+				<span class="error_txt_format">Если Вы нашли ошибку сообщите о ней администратору.</span>
+			</div>
+
+		</div>
+	</body>
+	<footer>
+		<script th:src="@{/js/jquery-2.2.4.min.js}" type="text/javascript" ></script>
+		<script th:src="@{/js/js_pages/shared_scripts.js}" type="text/javascript"></script>
+		<script th:src="@{/js/js_pages/home.js}" type="text/javascript"></script>
+	</footer>
+</html>

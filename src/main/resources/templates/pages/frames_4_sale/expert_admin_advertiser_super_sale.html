@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<!-------------------------------- HEADER	-------------------->
+		<div th:insert="fragments/headers/header::changeable_pages"></div>
+		<!-------------------------------------------------------------->
+	</head>
+	<body>
+	<div class="main">
+
+		<!----------------------HOME AND LOGOUT BUTTON---------------->
+		<div th:insert="fragments/common/home_button :: go_home"></div>
+		<!------------------------------------------------------------>
+		<!------------------------------------TOP LABELS------------------------------------------>
+		<div th:insert="fragments/pages/attic/labels :: sale"></div>
+		<!---------------------------------------------------------------------------------------->
+
+		<!----------------------------UNDER LABEL LEAD INFO------------------------>
+		<div th:insert="fragments/pages/attic/under_label :: brief_lead_info"></div>
+		<!------------------------------------------------------------------------->
+
+			<div id="content">
+
+				<!-------------------------------- 4.1	-------------------------------------------------------------->
+				<div th:insert="fragments/pages/page_4_sale_bits/sale_4.1_calls_views_ch :: tbl_4_1"></div>
+				<!---------------------------------------------------------------------------------------------------->
+
+				<!--------------------------------1.1-1.2-------------------------------------------------------->
+				<div th:insert="fragments/pages/page_1_flat_bits/unchangeable/flat_1.1_client_1.2_object_un :: lead_obj"></div>
+				<!----------------------------------------------------------------------------------------------->
+
+				<!---------------------------------------------1.5 FOTO ALBUM--------------------->
+				<div class="central_container">
+					<div class="table_header"><p> 1.5. Фотографии </p></div>
+
+					<div class="main_foto_div">
+
+						<form action="/api/update/foto/delete_fotos" method="POST">
+
+							<!------------------------------------------------------------->
+							<div th:insert="fragments/pages/fotos/album :: page_foto"></div>
+							<!------------------------------------------------------------->
+
+							<input type="hidden" name="leadId" th:value="${lead.getId}">
+							<input type="hidden" name="path" value="advertisment">
+						</form>
+					</div>
+
+				</div>
+				<!----------------------------------1.5 BUTTONS----------------------------------->
+				<form action="/api/update/foto/upload_fotos" method="POST" enctype="multipart/form-data" >
+
+					<!-------------------------------- 1.5.2	----------------------------------->
+					<div th:insert="fragments/pages/fotos/buttons :: download_upload_buttons"></div>
+					<!----------------------------------------------------------------------------->
+
+					<input type="hidden" name="leadId" th:value="${lead.getId}">
+					<input type="hidden" name="path" value="advertisment">
+
+				</form>
+				<!--------------------------------------------------------------------------------->
+
+				<!-------------------------------- 4.4	-------------------------------------------------------------->
+				<div class="central_container">
+					<div class="table_header"><p> 4.4. Текст объявления </p></div>
+					<div style="width: 80%; margin: 5px auto">
+						<form action="/api/update/sale/selling_text" method="POST">
+
+						<textarea type="text" rows="15" cols="50" wrap="hard" class="textarea"
+								  name="sellingText"
+								  th:text="${lead.getSellingText}"
+								  placeholder="текст объявления..."></textarea>
+
+							<div style="height: 200px;">
+								<div style="float: left; ">
+									<br/>
+									<br/>
+									<br/>
+
+									<input class="hidden_input" type="text" name="leadId" th:value="${lead.getId}">
+									<input type="submit" class="send_post_button" value="сохранить текст объявления">
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<div class="central_container">
+					<div class="table_header"><p> 4.5. Объект выставлен в продажу </p></div>
+					<div style="width: 80%; margin: 5px auto">
+						<form action="/api/update/sale/selling_started" method="POST">
+
+							<div style="height: 200px;">
+								<div style="float: left; ">
+									<br/>
+									<br/>
+
+									<input class="hidden_input" type="text" name="leadId" th:value="${lead.getId}">
+									<input type="submit" class="send_post_button" value="объект выставлен в продажу">
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+<!--				<div th:insert="content/pages/fragments/page_4_sale/changeable/sale_text_advertisment::advertisment"></div>-->
+				<!---------------------------------------------------------------------------------------------------->
+
+				<!--- BOOTOM COMFORT BLOCK 	----------->
+				<div class="bottom_comfort_block"></div>
+				<!------------------------------------->
+
+			</div>
+		<!--------------------------------------   end content   ------------------------------------------->
+	</div>
+	<!----------------------------------------    end of main block  ----------------------------------------->
+	</body>
+	<!---------------------------------FOOTER------------------------>
+	<div th:insert="fragments/footers/footer::changeable_pages"></div>
+	<!--------------------------------------------------------------->
+</html>

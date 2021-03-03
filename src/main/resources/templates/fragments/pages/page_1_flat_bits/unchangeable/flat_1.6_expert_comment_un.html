@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="tbl_1_6">
+	<!--------------------------------------------------------------------->
+	<!-------------------------------- 1.6	------------------------------->
+	<div class="central_container">
+
+		<div class="table_header">
+			<p> 1.6. Обратная связь </p>
+		</div>
+
+		<div class="expert_comments_div">
+			<div th:each="comment : ${lead.getExpertComments}" style="margin: 9px;">
+				<span class="os_date_format" th:text="${comment.getCommentDate}"></span>
+				<span class="user_message" th:text="${comment.getExpertComment}"></span>
+			</div>
+		</div>
+
+		<div style="width: 80%; height: 170px; margin: 10px auto">
+			<div class="price_holder">
+				<p>Оценка эксперта для <b>[[${lead.getPrecontractType}]]</b></p>
+				<div class="curent_price">
+					<input type="text" class="set_price" maxlength="30"
+						   th:value="${lead.getExpertPrice}" readonly>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<!--------------------------------------------------------------------->
+</div>
+</body>
+</html>

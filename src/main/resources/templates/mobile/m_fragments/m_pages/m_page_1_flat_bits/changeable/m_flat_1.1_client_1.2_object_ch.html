@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------TABLE 1.1-------------------------------------------------------------->
+<div th:fragment="lead_obj" th:object="${lead}">
+
+	<div>
+
+	</div>
+
+	<div class="central_container">
+
+		<div class="table_header"> <p> 1.1. Клиент </p></div>
+
+
+		<div class="lead_bit">
+			<p class="input_label"> Имя: </p>
+				<input type="text" th:class="*{getName} ? mobile_input : empty_mobile_input"
+					   name="leadOwnerName"
+					   th:value="*{getName}">
+		</div>
+
+		<div class="lead_bit">
+			<p class="input_label">Телефон: </p>
+				<input type="text" th:class="*{getTel} ? mobile_input : empty_mobile_input"
+					   name="tel"
+					   th:value="*{getTel}">
+		</div>
+
+		<div class="lead_bit">
+			<p class="input_label"> Статус заявки: </p>
+				<select class="mobile_input"
+						name="newLeadStatus">
+					<option value="">можно изменить статус</option>
+					<option th:each="leadStatus : ${leadStatusList}"
+							name="status"
+							th:value="${leadStatus}"
+							th:text="${leadStatus}"></option>
+				</select>
+		</div>
+
+		<div class="lead_bit">
+			<p class="input_label"> Оценка подготовлена для: </p>
+				<input type="text" th:class="*{getPrecontractType} ? mobile_input : empty_mobile_input"
+					   name="precontractType"
+					   th:value="*{getPrecontractType}">
+		</div>
+
+		<div class="lead_bit">
+			<p class="input_label"> Дата следующего звонка: </p>
+				<input type="date" th:class="*{getControlDate} ? mobile_input : empty_mobile_input"
+					   name="controlDate"
+					   th:value="*{getControlDate}">
+		</div>
+
+	</div>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------TABLE 1.2-------------------------------------------------------------->
+
+	<div class="central_container">
+		<div class="table_header"><p> 1.2. Характеристики квартиры </p></div>
+
+
+		<div class="lead_bit">
+			<p class="input_label"> Адрес: </p>
+			<p class="input_label" th:text="*{getAddress}"></p>
+			<input type="text" th:class="*{getAddress} ? mobile_input : empty_mobile_input"
+				   name="address">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Метро: </p>
+			<input type="text" th:class="*{getMetro} ? mobile_input : empty_mobile_input"
+				   name="metro"
+				   th:value="*{getMetro}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Год постройки: </p>
+			<input type="text" th:class="*{getBuildYear} ? mobile_input : empty_mobile_input"
+				   name="buildYear"
+				   th:value="*{getBuildYear}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Тип дома: </p>
+			<input type="text" th:class="*{getHouseType} ? mobile_input : empty_mobile_input"
+				   name="houseType"
+				   th:value="*{getHouseType}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Этаж/Этажей: </p>
+			<input type="text" th:class="*{getFlatFloor} ? mobile_input : empty_mobile_input"
+				   name="floor"
+				   th:value="*{getFlatFloor}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Комнаты/кухня: </p>
+			<input type="text" th:class="*{getFlatRooms} ? mobile_input : empty_mobile_input"
+				   name="rooms"
+				   th:value="*{getFlatRooms}">
+		</div>
+		<div class="lead_bit">
+			<p class="input_label"> Площадь: </p>
+			<input type="text" th:class="*{getFlatSquare} ? mobile_input : empty_mobile_input"
+				   name="flatSquare"
+				   th:value="*{getFlatSquare}">
+		</div>
+
+	</div>
+	<!--------------------------------end 1.2------------------------------->
+</div>
+</body>
+</html>

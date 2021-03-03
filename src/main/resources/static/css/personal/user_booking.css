@@ -1,0 +1,40 @@
+.red_table_header{
+	width: 330px;
+	min-height: 50px;
+	margin-top: 30px;
+	margin-left: 10%;
+	margin-bottom: -5px;
+	font-weight: bold;
+	border: 1px solid #dddddd;
+	text-align: center;
+	color: black;
+	display: block;
+	background-color: indianred;
+}
+
+td.visible_td_label{
+	height: 40px;
+	width: 330px;
+	font-weight: bold;
+	border: 1px solid gray;
+	padding: 0;
+	line-height: 1.5;
+	background-color: #E8E6D1;
+	opacity: 1.0;
+}
+
+td.invisible_td_label{
+	height: 40px;
+	width: 330px;
+	font-weight: bold;
+	border: 1px solid gray;
+	padding: 0;
+	line-height: 1.5;
+	background-color: #d1dce3;
+	opacity: 0.5;
+ }
+
+.radio_input{
+	width: 39px;
+	height: 39px;
+}

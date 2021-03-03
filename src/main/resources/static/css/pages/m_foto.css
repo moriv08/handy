@@ -1,0 +1,184 @@
+	.main_foto_div {
+		width:100%;
+		height: 640px;
+		margin: 15px auto;
+		/*margin-top: 15px;*/
+		/*margin-left: 33px;*/
+		padding: 0;
+		display: block;
+		overflow: hidden;
+		/*border-radius: 1px;*/
+
+		/*background: rgba(245, 245, 45, 0.8);*/
+	}
+
+		.foto_div{
+			width: 100%;
+			height: 640px;
+			/*display: table;*/
+			overflow: hidden;
+			/*float: left;*/
+			text-align: center;
+			margin: 0 auto;
+			border-radius: 3px;
+			/*border: 3px solid gray;*/
+			/*border-top: 1px solid gray;*/
+			/*border-bottom: 1px solid gray;*/
+			/*background: rgba(245, 245, 245, 0.8);*/
+		}
+
+			.viewport {
+				width: 98%;
+				height: 100%;
+				margin-left: 1%;
+				/*display: block;*/
+				/*float: left;*/
+				display: block;
+				overflow: hidden;
+				/*border-right: 1px solid gray;*/
+				/*border-left: 1px solid gray;*/
+
+				/*background: rgba(245, 245, 45, 0.8);*/
+			}
+
+			div.empty_viewport {
+				width: 98%;
+				height: 100%;
+				margin-left: 1%;
+				margin-top: 0;
+				padding: 0;
+				display: block;
+				/*overflow: hidden;*/
+				/*float: left;*/
+				background: url("../../img/some/mobile_no_foto.jpg")  no-repeat;
+				background-size: cover;
+				/*opacity: 0.5;*/
+			}
+	.tv_screen{
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		display: block;
+		/*background: rgba(120, 170, 245, 0.9);*/
+
+	}
+	/*.page_flyer {*/
+	/*	height: 98%;*/
+	/*	width: 5%;*/
+	/*	margin-top: 1%;*/
+	/*	opacity: 0.6;*/
+	/*	filter: blur(5px);*/
+	/*}*/
+
+	/*.page_flyer:hover {*/
+	/*	opacity: 0.6;*/
+	/*	filter: blur(1px);*/
+	/*}*/
+
+	/*.left_flyer{*/
+	/*	float: left;*/
+	/*	background: url("../../img/some/left_hi.png")  no-repeat;*/
+	/*	!*background: url("../../img/some/no_foto.jpg")  no-repeat;*!*/
+	/*	background-size: cover;*/
+
+
+	/*	border-right: 1px solid lightgray;*/
+	/*	!*background-color: #EE693F;*!*/
+	/*}*/
+
+	/*#right_flyer{*/
+	/*	float: right;*/
+	/*	!*background: url("../../img/some/right_3.png") no-repeat;*!*/
+	/*	background: url("../../img/some/right_hi.png")  no-repeat;*/
+	/*	background-size: cover;*/
+	/*	border-left: 1px solid lightgray;*/
+
+
+
+	/*	!*background-color: #EE693F;*!*/
+	/*}*/
+			/*#table_foto_container{*/
+			/*	width: 100px;*/
+			/*	background-color: gold;*/
+			/*	border: 3px solid gray;*/
+			/*	display: block;*/
+			/*}*/
+
+			/*.check_box_td_container{*/
+			/*	max-width: 37px;*/
+			/*	display: none;*/
+			/*	!*background-color: rebeccapurple;*!*/
+			/*}*/
+
+			/*.img_td_container{*/
+			/*	padding: 0;*/
+			/*	margin: 0;*/
+			/*	display: none;*/
+			/*	!*background-color: green;*!*/
+			/*}*/
+
+	@media all and (orientation:portrait) {
+		.slide_img {
+			height: auto;
+			width: 100%;
+			margin: auto 0;
+			display: none; /* hiding all isnt active fotos */
+		}
+	}
+	@media all and (orientation:landscape) {
+		/* Styles for Landscape screen */
+		.slide_img {
+			height: 100%;
+			width: auto;
+			margin: 0 auto;
+			display: none; /* hiding all isnt active fotos */
+		}
+	}
+			/*.slide_img {*/
+			/*	height: 98%;*/
+			/*	width: auto;*/
+			/*	margin: 0 auto;*/
+			/*	display: none; !* hiding all isnt active fotos *!*/
+			/*}*/
+
+			.delete_button{
+				width: 100%;
+				height: 35px;
+				margin: 1px auto;
+				opacity: 0.5;
+				float: left;
+				background-color: #EE693F;
+			}
+			.delete_button:hover {
+				color: white;
+				opacity: 1.0;
+			}
+
+			.delete_checkbox{
+				width: 30px;
+				height: 30px;
+				float: left;
+				display: none;
+				box-shadow: 0.5em 0.5em 11px rgba(122,122,122,0.7);
+			}
+				.foto_buttons_div{
+					width: 750px;
+					height: 80px;
+					margin: 10px auto;
+					display: block;
+				}
+	/**************************     post block         ****************************/
+
+	.downloaders{
+		min-height: 70px;
+		width: 40%;
+		margin-left: 5%;
+		float: left;
+
+		/*background-color: orangered;*/
+	}
+
+	.check_box{
+		width: 39px;
+		height: 39px;
+	}

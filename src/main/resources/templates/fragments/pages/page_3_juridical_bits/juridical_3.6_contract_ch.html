@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_3_6">
+
+
+
+
+		<!-------------------------------- 3.6	------------------------------->
+			<div class="central_container" >
+				<form action="/api/update/juridical/main_contract" method="POST">
+
+				<div class="table_header"><p> 3.6. Договор </p></div>
+
+				<table class="info_table">
+					<tr>
+						<td class="td_label">
+							<p> Тип договора: </p>
+						</td>
+						<td th:class="*{getContractType} ? td_txt : td_txt_empty">
+							<span class="curent_juristic_data"
+								  th:text="*{getContractType}"></span>
+							<input class="hidden_juristic_input" type="text" maxlength="75"
+								   name="contractType"
+								   th:placeholder="*{getContractType}">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Дата заключения: </p>
+						</td>
+						<td th:class="*{getContractStart} ? td_txt :  td_txt_empty">
+							<span class="curent_juristic_data"
+								  th:text="*{getContractStart}"></span>
+							<input class="hidden_juristic_input" type="date"
+								   name="contractStart">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_label">
+							<p> Дата окончания: </p>
+						</td>
+						<td th:class="*{getContractEnd} ? td_txt :  td_txt_empty">
+							<span class="curent_juristic_data"
+								  th:text="*{getContractEnd}"></span>
+							<input class="hidden_juristic_input" type="date"
+								   name="contractEnd">
+						</td>
+					</tr>
+					<tr>
+						<td>
+
+							<input type="hidden" name="leadId" th:value="${lead.getId}">
+							<input type="submit" class="send_post_button" value="договор подписан">
+						</td>
+						<td></td>
+					</tr>
+				</table>
+
+				</form>
+			</div>
+
+
+		<!--------------------------------------------------------------------->
+
+
+
+	</div>
+</html>

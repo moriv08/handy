@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>TEST</title>
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/test.css}">
+		
+	</head>
+	<body>
+		<div class="main">
+
+
+			<div class="filters_block">
+				<ul th:each="lead : ${allFilters}">
+					<li class="orange" th:text="${lead.key}"></li>
+				</ul>
+			</div>
+
+				<div class="filters_block">
+					<ul th:each="lead : ${allLeads}">
+						<li th:text="${lead.getId} + ', tel. ' + ${lead.getTel}"></li>
+					</ul>
+				</div>
+				<div style="width: 300px; height: 40px; margin-bottom: 50px; background: #E8E6D1" >
+					<form method="get" th:action="@{'/api/test/one/' + ${start - 3} + '/' + ${start}}">
+<!--						<input type="hidden" name="end" value="${start}">-->
+<!--						<input type="hidden" name="start" value="${start} - 3">-->
+						<input style="float: left; width: 100px; height: 30px;"  type="submit" value="<<<">
+					</form>
+
+					<form method="get" th:action="@{'/api/test/one/' + ${end} + '/' + ${end + 3}}">
+<!--						<input type="hidden" name="start" value="${end}">-->
+<!--						<input type="hidden" name="end" value="${end} + 3">-->
+						<input style="float: right; width: 100px; height: 30px;" type="submit" value=">>>">
+					</form>
+				</div>
+
+
+		</div>
+	</body>
+	<footer>
+		<script th:src="@{/js/jquery-2.2.4.min.js}" type="text/javascript" ></script>
+		<script th:src="@{/js/js_pages/shared_scripts.js}" type="text/javascript"></script>
+		<script th:src="@{/js/js_pages/home.js}" type="text/javascript"></script>
+	</footer>
+</html>

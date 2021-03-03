@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+<div th:fragment="admin_filters">
+
+	<div class="leftSideTBT">
+		<ul class="colored_leads_table" th:each="filterFilter : ${allFilters}">
+			<li th:if="${wanted}">
+				<a href="/" class="lead_filters"
+				   th:text="${filterFilter.key}"></a>
+			</li>
+			<li th:unless="${wanted}">
+				<a th:href="@{'/api/home/admin/filters/' + ${filterFilter.key}}"
+				   th:text="${filterFilter.key}"
+				   th:class="${hilightedFilter}==${filterFilter.key} ? hilight_lead_filter : lead_filters"></a>
+			</li>
+		</ul>
+	</div>
+
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+<div th:fragment="admin_experts">
+
+	<div class="leftSideTBT">
+		<ul class="colored_leads_table" th:each="filterExpert : ${allFilters}">
+			<!--									<td th:if="${ifNothingToShow}">-->
+			<!--										<a th:href="@{'/'}"-->
+			<!--										   class="lead_filters" th:text="${filterExpert.key}"></a>-->
+			<!--									</td>-->
+			<!--									<td th:unless="${ifNothingToShow}">-->
+			<li>
+				<a th:href="@{'/api/home/admin/experts/' + ${filterExpert.key}}"
+				   th:text="${filterExpert.key}"
+				   th:class="${hilightedFilter}==${filterExpert.key} ? hilight_lead_filter : lead_filters"></a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+<div th:fragment="superuser_filters">
+
+	<table class="colored_leads_table">
+		<tr th:each="filterFilter : ${allFilters}">
+			<td th:if="${wanted}">
+				<a href="/" class="lead_filters"
+				   th:text="${filterFilter.key}"></a>
+			</td>
+			<td th:unless="${wanted}">
+				<a th:href="@{'/api/home/superuser/filters/' + ${filterFilter.key}}"
+				   th:text="${filterFilter.key}"
+				   th:class="${hilightedFilter}==${filterFilter.key} ? hilight_lead_filter : lead_filters"></a>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+
+<div th:fragment="superuser_experts">
+
+	<table class="colored_leads_table">
+		<tr th:each="filterExpert : ${allFilters}">
+			<!--									<td th:if="${ifNothingToShow}">-->
+			<!--										<a th:href="@{'/'}"-->
+			<!--										   class="lead_filters" th:text="${filterExpert.key}"></a>-->
+			<!--									</td>-->
+			<!--									<td th:unless="${ifNothingToShow}">-->
+			<td>
+				<a th:href="@{'/api/home/superuser/experts/' + ${filterExpert.key}}"
+				   th:text="${filterExpert.key}"
+				   th:class="${hilightedFilter}==${filterExpert.key} ? hilight_lead_filter : lead_filters"></a>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+<div th:fragment="advanced_filters">
+
+	<table class="colored_leads_table">
+		<tr th:each="filterFilter : ${allFilters}">
+			<td th:if="${wanted}">
+				<a href="/" class="lead_filters"
+				   th:text="${filterFilter.key}"></a>
+			</td>
+			<td th:unless="${wanted}">
+				<a th:href="@{'/api/home/advanced/filters/' + ${filterFilter.key}}"
+				   th:text="${filterFilter.key}"
+				   th:class="${hilightedFilter}==${filterFilter.key} ? hilight_lead_filter : lead_filters"></a>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+
+<div th:fragment="advanced_experts">
+
+	<table class="colored_leads_table">
+		<tr th:each="filterExpert : ${allFilters}">
+			<!--									<td th:if="${ifNothingToShow}">-->
+			<!--										<a th:href="@{'/'}"-->
+			<!--										   class="lead_filters" th:text="${filterExpert.key}"></a>-->
+			<!--									</td>-->
+			<!--									<td th:unless="${ifNothingToShow}">-->
+			<td>
+				<a th:href="@{'/api/home/advanced/experts/' + ${filterExpert.key}}"
+				   th:text="${filterExpert.key}"
+				   th:class="${hilightedFilter}==${filterExpert.key} ? hilight_lead_filter : lead_filters"></a>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+
+</body>
+</html>

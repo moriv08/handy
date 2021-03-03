@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<div th:fragment="download_upload_buttons">
+	<!--------------------------------BUTTONS--------------------------->
+
+	<div class="central_container">
+
+		<div class="foto_buttons_div">
+
+			<div class="downloaders"><!------  выбрать файлы  ----->
+				<input class="files_downloader" type="file" accept="image/png, image/jpeg, image/jpg"
+					   name="foto_files" multiple>
+			</div>
+
+			<div class="downloaders">
+				<input class="send_post_button" type="submit"
+					   value="Загрузить фото">
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--------------------------------------------------------------->
+</div>
+</body>
+</html>

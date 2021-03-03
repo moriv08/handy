@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tbl_3_4">
+
+
+
+		<!-------------------------------- 3.4	------------------------------->
+		<div class="central_container">
+
+			<div class="table_header"
+				 th:if="${allFotos.size} > 0"><p> 3.4. Документы </p></div>
+
+			<div class="main_foto_div">
+
+				<form th:action="@{'/api/update/juridical/delete_docs/' + ${role} }" method="POST">
+
+					<!-------------------------------------------------------------------------->
+					<div th:insert="content/pages/fragments/common/foto/foto_album::fotos"></div>
+					<!-------------------------------------------------------------------------->
+
+					<input type="hidden" name="leadId" th:value="${lead.getId}">
+				</form>
+
+			</div>
+
+<!--			<div class="foto_buttons_div">-->
+
+<!--				<form method="POST" enctype="multipart/form-data" action="/foto/juridical/upload">-->
+<!--					<div class="downloaders">&lt;!&ndash;&#45;&#45;&#45;&#45;  выбрать файлы  -&#45;&#45;&ndash;&gt;-->
+<!--						<input class="files_downloader" type="file" name="files"-->
+<!--							   accept="image/png, image/jpeg, image/jpg" multiple>-->
+<!--					</div>-->
+<!--					<div class="downloaders">-->
+<!--						<input type="hidden" name="id" th:value="${person.getId}">-->
+<!--						<input type="hidden" name="applId" th:value="${appl.getId}">-->
+<!--						<input class="send_post_button" type="submit" value="Загрузить файлы...">-->
+<!--					</div>-->
+<!--				</form>-->
+
+<!--			</div>-->
+
+
+		</div>
+		<!--------------------------------------------------------------------->
+
+
+
+	</div>
+</html>

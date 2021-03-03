@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------ADMIN TASKS----------------------------------------------------------------------->
+<div th:fragment="admin_tasks">
+
+	<div class="publicity">
+		<div class="tasks">
+			<!--			<a th:if="${docLessLeads}"-->
+			<!--			   th:href="@{'/api/expert/home/' + ${docLessLeadsLabel} }">-->
+			<p th:if="${docLessLeads}">
+				Необходимо собрать <b>[[${requiredDocsCounter}]]</b> документов по <b>[[${docLessLeads.size}]]</b> заявкам
+			</p>
+			<!--			</a>-->
+
+			<!--			<a th:if="${endingBookings}"-->
+			<!--			   th:href="@{'/api/expert/home/' + ${endingBookingsLabel} }">-->
+			<p th:if="${endingBookings}" th:style="${endingBookings.size} > 0 ? 'color: red'">
+				На сегодняшний день необходимо продлить <b>[[${endingBookings.size}]]</b> броней
+			</p>
+			<!--			</a>-->
+
+			<!--			<a th:if="${yesterdayCalls}"-->
+			<!--			   th:href="@{'/api/expert/home/' + ${yestodayCallsLabel} }">-->
+			<p th:if="${yesterdayCalls}"th:style="${yesterdayCalls.size} > 0 ? 'color: red'">
+				У Вас <b>[[${yesterdayCalls.size}]]</b> просроченых звонков
+			</p>
+			<!--			</a>-->
+
+			<!--			<a th:if="${todayCalls}"-->
+			<!--			   th:href="@{'/api/expert/home/' + ${todayCallsLabel} }">-->
+			<p th:if="${todayCalls}"th:style="${todayCalls.size} > 0 ? 'color: red'">
+				Сегодня необходимо сделать <b>[[${todayCalls.size}]]</b> звонков
+			</p>
+			<!--			</a>-->
+		</div>
+	</div>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE COLORED LEADS-------------------------------------------------------------->
+<div th:fragment="admin_announcement">
+
+
+	<form action="/api/update/admin/announcement" method="GET">
+
+		<div class="publicity">
+		<textarea type="text" rows="7" cols="50" wrap="hard" class="announcement_text"
+				  name="announcement"
+				  th:placeholder="${announcement}"></textarea>
+		</div>
+		<input type="submit" class="announcement_button" value="Создать">
+
+	</form>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------EXPERT TASKS---------------------------------------------------------------------->
+<div th:fragment="expert_tasks">
+
+	<div class="publicity">
+		<div class="tasks">
+<!--			<a th:if="${docLessLeads}"-->
+<!--			   th:href="@{'/api/expert/home/' + ${docLessLeadsLabel} }">-->
+			<p th:if="${docLessLeads}">
+				Необходимо <b>[[${docLessLeads.size}]]</b> документов по <b>[[${docLessLeads.size}]]</b> заявкам
+			</p>
+<!--			</a>-->
+
+<!--			<a th:if="${endingBookings}"-->
+<!--			   th:href="@{'/api/expert/home/' + ${endingBookingsLabel} }">-->
+			<p th:if="${endingBookings}">
+				На сегодняшний день необходимо продлить <b>[[${endingBookings.size}]]</b> броней
+			</p>
+<!--			</a>-->
+
+<!--			<a th:if="${yesterdayCalls}"-->
+<!--			   th:href="@{'/api/expert/home/' + ${yestodayCallsLabel} }">-->
+			<p th:if="${yesterdayCalls}">
+				У Вас <b>[[${yesterdayCalls.size}]]</b> просроченых звонков
+			</p>
+<!--			</a>-->
+
+<!--			<a th:if="${todayCalls}"-->
+<!--			   th:href="@{'/api/expert/home/' + ${todayCallsLabel} }">-->
+			<p th:if="${todayCalls}">
+				Сегодня необходимо сделать <b>[[${todayCalls.size}]]</b> звонков
+			</p>
+<!--			</a>-->
+
+		</div>
+		<div class="timer"></div>
+	</div>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------SIMPLE ANNOUNCEMENT--------------------------------------------------------------->
+<div th:fragment="simple_announcement">
+
+		<div class="publicity">
+		<textarea type="text" rows="4" cols="50" wrap="hard" class="announcement_text"
+				  name="announcement"
+				  th:placeholder="${announcement}" readonly></textarea>
+		</div>
+
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>

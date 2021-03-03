@@ -1,0 +1,72 @@
+
+.login_div{
+	min-height: 320px;
+	width: 700px;
+	margin: 10% auto;
+	background-color: #5F9EA0;
+	text-align: center;
+}
+.login_input{
+	width: 270px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 22px;
+	border-radius: 3px;
+	border: 1px solid lightgray;
+	background-color: lightyellow;
+	box-shadow: 0.4em 0.4em 11px rgba(122,122,122,0.3);
+}
+.login_button{
+	width: 270px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 3px;
+	background-color: darkgray;
+	text-align: center;
+	color: white;
+	border: 1px solid lightgray;
+	font-size: 18px;
+	box-shadow: 0.4em 0.4em 11px rgba(122,122,122,0.3);
+}
+/**********************************/
+/********* mobile *****************/
+
+.mobile_login_div{
+	min-height: 60%;
+	width: 95%;
+	margin: 20% auto;
+	background-color: #5F9EA0;
+	text-align: center;
+}
+.mobile_login_input{
+	width: 70%;
+	height: 150px;
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 40px;
+	border-radius: 15px;
+	border: 1px solid lightgray;
+	background-color: lightyellow;
+	box-shadow: 0.4em 0.4em 11px rgba(122,122,122,0.3);
+}
+
+.mobile_login_button{
+	width: 50%;
+	height: 150px;
+	margin-top: 50px;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-left: auto;
+	border-radius: 15px;
+	background-color: darkgray;
+	text-align: center;
+	color: white;
+	border: 1px solid lightgray;
+	font-size: 40px;
+	box-shadow: 0.4em 0.4em 11px rgba(122,122,122,0.3);
+}

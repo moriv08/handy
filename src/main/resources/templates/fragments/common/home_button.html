@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!---------------------------------------HOME------------------------------------------------>
+<div th:fragment="go_home">
+	<div class="userID">
+		<table>
+			<tr>
+				<td width="60px">
+					<a href="/">
+						<img class="home" th:src="@{/img/some/home_2.png}" alt="home">
+					</a>
+				</td>
+				<td width="378px">
+						<span th:if="${person}"
+							  th:text="${person.getName}">
+						</span>
+				</td>
+				<td width="60px" >
+					<form th:action="@{/logout}" method="post">
+						<input type="submit" class="logout" value="">
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------------------->
+<!---------------------------------------MOBILE HOME------------------------------------------------>
+<div th:fragment="mobile_go_home">
+	<div class="mobile_userID">
+		<table>
+			<tr>
+				<td width="60px">
+					<a href="/">
+						<img class="mobile_home" th:src="@{/img/some/home_2.png}" alt="home">
+					</a>
+				</td>
+				<td width="378px">
+						<span th:if="${person}"
+							  th:text="${person.getName}">
+						</span>
+				</td>
+				<td width="60px" >
+					<form th:action="@{/logout}" method="post">
+						<input type="submit" class="mobile_logout" value="">
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------------------->
+
+</body>
+</html>

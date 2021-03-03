@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--------------------------------------------------------------------------------->
+	<div th:fragment="leads_table">
+
+		<div class="lead_block"  th:each="lead, state : ${allActiveLeads}">
+
+			<a th:href="@{'/api/flat/' + ${lead.getId}}" th:text="${state.count} + ' | №' + ${lead.getId} + ' от ' + ${lead.getLeadDate}"></a>
+
+			<hr>
+
+			<p th:text="${lead.getLeadStatus}"></p>
+
+			<a th:href="@{'/api/flat/' + ${lead.getId}}" th:text="${lead.getAddress}"></a>
+
+			<p th:text="${lead.getName}"></p>
+			<a th:href="'tel:' + ${lead.getTel}" th:text="${lead.getTel}"></a>
+			<p th:if="${lead.getControlDate}" th:text="'Контрольная дата ' + ${lead.getControlDate}"></p>
+			<p th:if="${lead.getExpertPrice}" th:text="'Оценка эксперта ' + ${lead.getExpert.getName} + ' ' + ${lead.getExpertPrice}"></p>
+			<p th:if="${lead.getSuperPrice}" th:text="'Оценка супервайзера ' + ${lead.getExpert.getSuperuser.getName} + ' ' + ${lead.getSuperPrice}"></p>
+
+		</div>
+
+		<div th:if="${ifNothingToShow}" class="empty_table">
+			<p> Данных удовлетворяющих поиску не найдено. </p>
+		</div>
+
+	</div>
+<!--------------------------------------------------------------------------------->
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!------------------------------------------------------------------------>
+<div th:fragment="flat">
+
+	<div class="booker">
+		<div class="main_bookmark">
+			<a th:href="@{${flat_path} + ${lead.getId}}">
+				1. ОБЪЕКТ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${booking_path} + ${lead.getId}}">
+				2. РАБОТА
+				<br/>
+				С КЛИЕНТОМ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${juridical_path} + ${lead.getId}}">
+				3. ЮРИДИЧЕСКОЕ ЗАКЛЮЧЕНИЕ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${advertisment_path} + ${lead.getId}}">
+				4. РЕКЛАМА
+			</a>
+		</div>
+	</div>
+</div>
+	<!--------------------------------------------------------------------------->
+	<!--------------------------------------------------------------------------->
+<div th:fragment="booking">
+
+	<div class="booker">
+		<div class="bookmarks">
+			<a th:href="@{${flat_path} + ${lead.getId}}">
+				1. ОБЪЕКТ
+			</a>
+		</div>
+		<div class="main_bookmark">
+			<a th:href="@{${booking_path} + ${lead.getId}}">
+				2. РАБОТА
+				<br/>
+				С КЛИЕНТОМ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${juridical_path} + ${lead.getId}}">
+				3. ЮРИДИЧЕСКОЕ ЗАКЛЮЧЕНИЕ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${advertisment_path} + ${lead.getId}}">
+				4. РЕКЛАМА
+			</a>
+		</div>
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------>
+<div th:fragment="juridical">
+
+	<div class="booker">
+		<div class="bookmarks">
+			<a th:href="@{${flat_path} + ${lead.getId}}">
+				1. ОБЪЕКТ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${booking_path} + ${lead.getId}}">
+				2. РАБОТА
+				<br/>
+				С КЛИЕНТОМ
+			</a>
+		</div>
+		<div class="main_bookmark">
+			<a th:href="@{${juridical_path} + ${lead.getId}}">
+				3. ЮРИДИЧЕСКОЕ ЗАКЛЮЧЕНИЕ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${advertisment_path} + ${lead.getId}}">
+				4. РЕКЛАМА
+			</a>
+		</div>
+	</div>
+
+</div>
+<!--------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------->
+<div th:fragment="sale">
+
+	<div class="booker">
+		<div class="bookmarks">
+			<a th:href="@{${flat_path} + ${lead.getId}}">
+				1. ОБЪЕКТ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${booking_path} + ${lead.getId}}">
+				2. РАБОТА
+				<br/>
+				С КЛИЕНТОМ
+			</a>
+		</div>
+		<div class="bookmarks">
+			<a th:href="@{${juridical_path} + ${lead.getId}}">
+				3. ЮРИДИЧЕСКОЕ ЗАКЛЮЧЕНИЕ
+			</a>
+		</div>
+		<div class="main_bookmark">
+			<a th:href="@{${advertisment_path} + ${lead.getId}}">
+				4. РЕКЛАМА
+			</a>
+		</div>
+	</div>
+
+</div>
+<!--------------------------------------------------------------------------------------->
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<!-------------------------------- отправка фото на сервер 	--------------------------->
+<div th:fragment="page_foto">
+
+	<div class="foto_div">
+		<div id="left_flyer" class="page_flyer"></div>
+
+			<div th:class="(${allFotos.size} > 0) ? viewport : empty_viewport">
+				<div class="tv_screen">
+				</div>
+
+				<div th:if="${allFotos.size} > 0">
+					<input type="submit" value="удалить выбранные фото" class="delete_button">
+				</div>
+
+				<div th:each="foto: ${allFotos}">
+					<input type="checkbox"  class="delete_checkbox"
+						   th:value="${foto.key}"
+						   name="fotoId">
+					<img th:src="${'data:image/png;base64,' + foto.value}" alt="" class="slide_img">
+				</div>
+			</div>
+
+		<div id="right_flyer" class="page_flyer"></div>
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------------>
+<!-------------------------------- отправка фото на сервер 	--------------------------->
+<div th:fragment="mobile_page_foto">
+
+	<div class="foto_div">
+<!--		<div class="page_flyer"></div>-->
+
+		<div th:class="(${allFotos.size} > 0) ? viewport : empty_viewport">
+			<div class="tv_screen">
+			</div>
+
+			<div th:if="${allFotos.size} > 0">
+				<input type="submit" class="delete_button"
+					   value="удалить выбранные фото">
+			</div>
+
+			<div th:each="foto: ${allFotos}">
+				<input type="checkbox"  class="delete_checkbox"
+					   th:value="${foto.key}"
+					   name="fotoId">
+				<img th:src="${'data:image/png;base64,' + foto.value}" alt="" class="slide_img">
+			</div>
+		</div>
+
+<!--		<div class="page_flyer"></div>-->
+	</div>
+
+</div>
+<!------------------------------------------------------------------------------------>
+
+</body>
+</html>

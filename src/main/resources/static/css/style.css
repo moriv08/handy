@@ -1,0 +1,200 @@
+
+	body{
+		background-image: url("../img/fon/44.jpg");
+	}
+
+/************************************   main   *************/
+
+	div.main {
+		width: 100%;
+		min-height: 100%;
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+		/*font-family: "Times New Roman", Times, serif, bree;*/
+		font-family: "Arial";
+
+/*background: linear-gradient(to top left, #F0E68C, #EEE8AA);*/
+/*background-image: url("../img/fon/4.jpg");!*, url(tr.png);*!*/
+/*#background-color: rgba(253, 253, 253, 0.9);*/
+/*#background: radial-gradient(at top, #E6E6FA, #FFFAFA);*/
+	}
+	
+	a {
+		text-decoration: none;
+		color: #1E0000;
+	}
+
+	p {
+		font-size: 20px;
+	}
+	
+	.userID {
+		width: 500px;
+		height: 50px;
+		margin-top: 0px;
+		margin-right: auto;
+		margin-bottom: 15px;
+		margin-left: auto;
+		border-radius: 0 0 5px 5px;
+		color: white;
+		font-size: 17px;
+		text-align: center;
+		line-height: 0.8;
+		background-color: #47402e;
+	}
+	.mobile_userID {
+		width: 90%;
+		height: 150px;
+		margin-top: 0px;
+		margin-right: auto;
+		margin-bottom: 15px;
+		margin-left: auto;
+		border-radius: 0 0 15px 15px;
+		color: white;
+		font-size: 45px;
+		text-align: center;
+		line-height: 3.3;
+		background-color: #47402e;
+	}
+/****************************** **************************/
+	.home{
+		width:50px;
+		height:40px;
+		float: left;
+		margin-top: 3px;
+		opacity: 0.9;
+	}
+	.home:hover{
+		opacity: 0.4;
+	}
+	.logout{
+		width:50px;
+		height:40px;
+		margin-top: 3px;
+		opacity: 0.3;
+		border: 0;
+		background: url('../img/some/logout_2.png') 100% 100% no-repeat;
+		background-size: cover;
+	}
+
+	.logout:hover{
+		opacity: 1.0;
+	}
+	.mobile_home{
+		width: 140px;
+		height: 130px;
+		float: left;
+		margin-top: 3px;
+		opacity: 0.9;
+	}
+	.mobile_home:hover{
+		opacity: 0.4;
+	}
+	.mobile_logout{
+		width: 130px;
+		height: 130px;
+		margin-top: 3px;
+		margin-left: 110px;
+		float: right;
+		opacity: 0.3;
+		border: 0;
+		background: url('../img/some/logout_2.png') 100% 100% no-repeat;
+		background-size: cover;
+	}
+
+	.mobile_logout:hover{
+		opacity: 1.0;
+	}
+	/*************************************************/
+
+	.statistic_table{
+		width: 100%;
+		min-height: 900px;
+		margin: 0 3px;
+
+		background-color: white;
+	}
+
+	.statistic_table th{
+		padding: 10px;
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid #dddddd;
+		color: white;
+		background-color: #47402e;
+	}
+
+	.statistic_table td{
+		border: 1px solid gray;
+		position:relative;
+
+		text-indent: 5px;
+
+		background-color: white;
+	}
+	.statistic_table td p{
+		font-size: 15px;
+		line-height: 0.5;
+	}
+	.info_block{
+		width: 100%;
+		height: 190px;
+		position: absolute;
+		top: 0;
+
+		background-color: white;
+	}
+
+	.yellow_block{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		border: 1px solid lightgray;
+
+		background-color: #FFFFCC;
+	}
+
+	.orange_block{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		border: 1px solid lightgray;
+
+		background-color: orange;
+	}
+	.green_block{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		border: 1px solid lightgray;
+
+		background-color: green;
+	}
+	.red_block{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+
+		background-color: orangered;
+	}
+
+	.expert_selections{
+		width: 20%;
+		height: 70px;
+		border-radius: 5px;
+		line-height: 22px;
+		border: 1px solid gray;
+
+		text-indent: 15px;
+	}
+
+
+	.expert_title_div{
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+	.expert_title p{
+		font-size: 29px;
+	}
