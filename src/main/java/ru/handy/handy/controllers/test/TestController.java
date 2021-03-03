@@ -3,17 +3,19 @@ package ru.handy.handy.controllers.test;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import ru.handy.handy.models.PrincipalEntity;
 import ru.handy.handy.models.lead_heap.LeadEntity;
 import ru.handy.handy.models.mappers.Labels;
-import ru.handy.handy.models.PrincipalEntity;
-import ru.handy.handy.service.lead_heap.LeadService;
 import ru.handy.handy.service.PrincipalUserDetailsService;
+import ru.handy.handy.service.lead_heap.LeadService;
 import ru.handy.handy.service.service.StatisticService;
 
-import java.net.http.HttpHeaders;
 import java.security.Principal;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/api/test")
@@ -29,42 +31,22 @@ public class TestController {
         this.statisticService = statisticService;
     }
 
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_EXPERT')")
-    @GetMapping("/{expert}")
-    public String statistics(@PathVariable(name = "expert") String expert,
-                             Model model,
-                             Principal principal){
-
-        PrincipalEntity principalEntity = principalService.findPrincipalEntityByUsername(principal.getName());
-
-        Map<String, List<Integer>> allStatistics = statisticService.findCurrentYearStatistic();
-        Map<String, List<Integer>> expertStatistic = statisticService.findCurrentYearStatisticByPrincipalId(principalEntity.getId());
-
-        model.addAttribute("statistics", allStatistics);
-        model.addAttribute("expert", expertStatistic);
-
-        return "/admin/statistic";
-    }
-
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_EXPERT')")
-    @GetMapping("/http")
-    public String http(){
-
-
-//        String b = client.uri().toString();
-
-
-
-//        System.out.println("??????????????????????" +
-//                "??????????????????????????????????" +
-//                "?????????????????????????????????" +
-//                "???????????????????????????? "  + a);
-//        System.out.println("??????????????????????" +
-//                "??????????????????????????????????" +
-//                "?????????????????????????????????" +
-//                "???????????????????????????? "  + b);
-        return "/test";
-    }
+//    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_EXPERT')")
+//    @GetMapping("/{expert}")
+//    public String statistics(@PathVariable(name = "expert") String expert,
+//                             Model model,
+//                             Principal principal){
+//
+//        PrincipalEntity principalEntity = principalService.findPrincipalEntityByUsername(principal.getName());
+//
+//        Map<String, List<Integer>> allStatistics = statisticService.findCurrentYearStatistic();
+//        Map<String, List<Integer>> expertStatistic = statisticService.findCurrentYearStatisticByPrincipalId(principalEntity.getId());
+//
+//        model.addAttribute("statistics", allStatistics);
+//        model.addAttribute("expert", expertStatistic);
+//
+//        return "/admin/statistic";
+//    }
 
     @GetMapping("/one/{start}/{end}")
     public String mobile(Model model, Principal principal,
