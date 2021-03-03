@@ -78,7 +78,7 @@ public class BookingController {
         sharedLogic.addBookingPageDigitCheckersAtTheModel(model);
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_2_booking/expert-admin-super_booking";
+        return "pages/frames_2_booking/expert-admin-super_booking";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_EXPERT')")
@@ -99,7 +99,7 @@ public class BookingController {
         sharedLogic.addBookingPageDigitCheckersAtTheModel(model);
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_2_booking/expert-admin-super_booking";
+        return "pages/frames_2_booking/expert-admin-super_booking";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'JURIST', 'ADVERTISER')")
@@ -116,7 +116,7 @@ public class BookingController {
         sharedLogic.addBookingPageDigitCheckersAtTheModel(model);
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_2_booking/expert-admin-super_booking";
+        return "pages/frames_2_booking/expert-admin-super_booking";
     }
 
 }

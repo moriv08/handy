@@ -100,7 +100,7 @@ public class HomeController {
         if (device.isMobile())
             return "/mobile/home/m_admin_filters";
         else
-            return "/home/admin_filters";
+            return "home/admin_filters";
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -115,7 +115,7 @@ public class HomeController {
         if (device.isMobile())
             return "/mobile/home/m_admin_experts";
         else
-            return "/home/admin_experts";
+            return "home/admin_experts";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER')")
@@ -132,7 +132,7 @@ public class HomeController {
         Map<String, List<LeadEntity>> allFilterFilters = leadService.findAllSuperuserFiltersById(principalEntity.getId());
         advancedLogic.addHomeCommonLinksToSuperuserModel(model, principalEntity.getId(), allFilterFilters, filter);
 
-        return "/home/superuser_filters";
+        return "home/superuser_filters";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER')")
@@ -160,7 +160,7 @@ public class HomeController {
         Map<String, List<LeadEntity>> allFilterFilters = leadService.findAllFilters();
         advancedLogic.addJuristAndAdvertiserHomeCommonLinksToPersonModel(model, allFilterFilters, filter);
 
-        return "/home/advanced_filters";
+        return "home/advanced_filters";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_JURIST', 'ROLE_ADVERTISER')")
@@ -171,7 +171,7 @@ public class HomeController {
         Map<String, List<LeadEntity>> allExpertsFilters = leadService.findAllOfExpertFilters();
         advancedLogic.addJuristAndAdvertiserHomeCommonLinksToPersonModel(model, allExpertsFilters, expert);
 
-        return "/home/advanced_experts";
+        return "home/advanced_experts";
     }
 
 
@@ -189,6 +189,6 @@ public class HomeController {
         expertLogic.addAllExpertHomeVariablesAtTheModel(model, principalEntity.getId(), filter, allFilters);
         sharedLogic.addCommmonHomePageColoredLeadsDigitCheckersAtTheModel(model);
 
-        return "/home/expert";
+        return "home/expert";
     }
 }

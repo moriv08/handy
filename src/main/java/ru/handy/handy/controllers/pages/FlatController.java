@@ -86,9 +86,9 @@ public class FlatController {
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
         if (device.isMobile())
-            return "/mobile/m_pages/m_frames_1_flat/m_admin_flat";
+            return "mobile/m_pages/m_frames_1_flat/m_admin_flat";
         else
-            return "/pages/frames_1_flat/admin_flat";
+            return "pages/frames_1_flat/admin_flat";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'EXPERT')")
@@ -111,7 +111,7 @@ public class FlatController {
         sharedLogic.addBookingAndWeakSideObjectsToModel(model, lead);
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_1_flat/expert_flat";
+        return "pages/frames_1_flat/expert_flat";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'SUPERUSER')")
@@ -129,7 +129,7 @@ public class FlatController {
         sharedLogic.addBookingAndWeakSideObjectsToModel(model, lead);
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_1_flat/super_flat";
+        return "pages/frames_1_flat/super_flat";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'JURIST', 'ADVERTISER')")
@@ -147,7 +147,7 @@ public class FlatController {
         sharedLogic.addBookingAndWeakSideObjectsToModel(model, lead);
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_1_flat/super_flat";
+        return "pages/frames_1_flat/super_flat";
     }
 
 

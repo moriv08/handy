@@ -81,7 +81,7 @@ public class JuridicalController {
 
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_3_juridical/jurist_admin_super_juridical";
+        return "pages/frames_3_juridical/jurist_admin_super_juridical";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_EXPERT')")
@@ -109,6 +109,6 @@ public class JuridicalController {
 
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_3_juridical/expert_juridical";
+        return "pages/frames_3_juridical/expert_juridical";
     }
 }

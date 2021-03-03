@@ -77,6 +77,6 @@ public class SaleController {
 
         sharedLogic.addPageCommonLinksToPersonModel(model, lead);
 
-        return "/pages/frames_4_sale/expert_admin_advertiser_super_sale";
+        return "pages/frames_4_sale/expert_admin_advertiser_super_sale";
     }
 }

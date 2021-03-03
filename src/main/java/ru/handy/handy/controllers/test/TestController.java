@@ -76,7 +76,7 @@ public class TestController {
 //        // necessary! add digit checkers
 //        sharedLogic.addHomePageColoredLeadsDigitCheckersAtTheModel(model);
 
-        return "/test";
+        return "test";
     }
 
 
