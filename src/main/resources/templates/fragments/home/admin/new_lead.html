@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 	<head>
-		<!-------------------------------- HEADER	-------------------->
-		<div th:insert="fragments/headers/header::changeable_pages"></div>
-		<!-------------------------------------------------------------->
+		<!----------------------------------HEADER------------------------>
+		<div th:insert="fragments/headers/header :: changeable_pages"></div>
+		<!---------------------------------------------------------------->
 	</head>
 	<body>
 		<div class="main">
@@ -12,16 +12,18 @@
 			<div th:insert="fragments/common/home_button :: go_home"></div>
 			<!------------------------------------------------------------>
 			<!------------------------------------TOP LABELS------------------------------------->
-<!--			<div th:insert="admin/top_labels/flat_top_labels :: link_labels"></div>-->
+			<div th:insert="fragments/home/admin/top_labels/new_lead_top_labels :: new_lead_label"></div>
 			<!----------------------------------------------------------------------------------->
-
+			<!----------------------------UNDER LABEL LEAD INFO------------------------>
+<!--			<div th:insert="fragments/home/admin/top_labels/new_lead_under_label :: new_lead_underlabel"></div>-->
+			<!------------------------------------------------------------------------->
 			<div id="content">
 
 				<div class="central_container">
 
 					<br/>
 
-					<form action="/api/update/admin/make_new_lead" method="post">
+					<form action="/api/update/admin/create_new_lead" method="post">
 
 						<input class="big_inputs" type="text" maxlength="75" name="tel" placeholder="Телефон клиента (в любом формате с пробелами или тире)">
 <!--						<input class="big_inputs" type="tel" name="tel" pattern="2[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>-->

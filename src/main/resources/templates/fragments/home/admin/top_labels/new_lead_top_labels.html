@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+	<body>
+		<div th:fragment="new_lead_label">
+
+			<div class="booker">
+				<div class="main_bookmark">
+					<a href="#">
+						Создать заявку
+					</a>
+				</div>
+
+				<div class="bookmarks">
+					<a href="/api/update/admin/few_leads">
+						Внести информацию в базу
+					</a>
+				</div>
+
+			</div>
+
+			<div class="under_label_info">
+<!--				<table class="lead_and_expert_info">-->
+<!--					<tr>-->
+<!--						<td th:text="'|  #' + '  |'"></td>-->
+<!--						<td th:text="'|  от ' + ' |'"></td>-->
+<!--						<td th:text="'|  в работе: ' + ' дн' + '  |'"></td>-->
+<!--						<td th:if="${contractPeriod}"-->
+<!--							th:text="'|  в договоре: ' + ' дн' + '  |'"></td>-->
+<!--						<td th:text="'|  эксперт: ' + '  |'"></td>-->
+<!--						<td th:text="'|  супервайзер: ' + '  |'"></td>-->
+<!--					</tr>-->
+<!--				</table>-->
+			</div>
+		</div>
+
+
+
+		<div th:fragment="few_leads_label">
+
+			<div class="booker">
+				<div class="bookmarks">
+					<a href="/api/update/admin/new_lead">
+						Создать заявку
+					</a>
+				</div>
+
+				<div class="main_bookmark">
+					<a href="#">
+						Внести информацию в базу
+					</a>
+				</div>
+
+			</div>
+
+			<div class="under_label_info">
+				<!--				<table class="lead_and_expert_info">-->
+				<!--					<tr>-->
+				<!--						<td th:text="'|  #' + '  |'"></td>-->
+				<!--						<td th:text="'|  от ' + ' |'"></td>-->
+				<!--						<td th:text="'|  в работе: ' + ' дн' + '  |'"></td>-->
+				<!--						<td th:if="${contractPeriod}"-->
+				<!--							th:text="'|  в договоре: ' + ' дн' + '  |'"></td>-->
+				<!--						<td th:text="'|  эксперт: ' + '  |'"></td>-->
+				<!--						<td th:text="'|  супервайзер: ' + '  |'"></td>-->
+				<!--					</tr>-->
+				<!--				</table>-->
+			</div>
+		</div>
+	</body>
+
+</html>
