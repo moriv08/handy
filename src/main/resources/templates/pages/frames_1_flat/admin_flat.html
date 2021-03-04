@@ -2,8 +2,17 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 	<head>
 		<!----------------------------------HEADER------------------------>
-		<div th:insert="fragments/headers/header :: changeable_pages"></div>
+<!--		<div th:insert="fragments/headers/header :: changeable_pages"></div>-->
 		<!---------------------------------------------------------------->
+
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+
+		<link rel="stylesheet" th:href="@{/css/pages/lead_pages_style.css}">
+		<link rel="stylesheet" th:href="@{/css/pages/foto.css}">
+		<link rel="stylesheet" th:href="@{/css/pages/changeable.css}">
+		<link rel="stylesheet" th:href="@{/css/personal/admin.css}">
+
+		<title th:if="${person}" th:text="${person.getName}"></title>
 	</head>
 	<body>
 		<div class="main">
