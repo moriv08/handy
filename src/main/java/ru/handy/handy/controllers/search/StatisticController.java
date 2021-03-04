@@ -65,6 +65,6 @@ public class StatisticController {
         System.out.println(expertsList.size());
         System.out.println(expert);
 
-        return "/admin/statistic";
+        return "admin/statistic";
     }
 }

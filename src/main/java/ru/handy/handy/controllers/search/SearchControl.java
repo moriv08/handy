@@ -65,15 +65,15 @@ public class SearchControl {
 
         if (principalEntity.getRole().equalsIgnoreCase("ADMIN")){
             if (device.isMobile())
-                return "/mobile/home/m_admin_filters";
+                return "mobile/home/m_admin_filters";
             else
-                return "/home/admin_filters";
+                return "home/admin_filters";
         }
         else{
             if (device.isMobile())
-                return "/mobile/home/m_advanced_filters";
+                return "mobile/home/m_advanced_filters";
             else
-                return "/home/advanced_filters";
+                return "home/advanced_filters";
         }
     }
 
@@ -96,7 +96,7 @@ public class SearchControl {
 
         sharedLogic.addCommmonHomePageColoredLeadsDigitCheckersAtTheModel(model);
 
-        return "/home/expert";
+        return "home/expert";
     }
 
 }

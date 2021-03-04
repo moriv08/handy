@@ -40,7 +40,7 @@ public class UpdatableAdminController {
         List<String> experts = principalService.findAllExpertNames();
         model.addAttribute("experts", experts);
 
-        return "/admin/new_lead";
+        return "admin/new_lead";
     }
 
 
